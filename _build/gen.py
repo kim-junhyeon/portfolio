@@ -14,7 +14,7 @@ PROJECTS = [
        hook='"10초 전의 내가 지금의 동료가 된다", 수치로 정답 루트를 고정한 시간 루프 퍼즐 플랫포머.',
        thumb='assets/img/echo-tower.jpg', color='#3A4F7A'),
   dict(slug='whoami', tag='PROJECT 04 | 5인 팀, 비주얼 노벨', name='WHO AM I?',
-       hook='호감에서 의심, 혼란 순으로 여섯 방을 배치하고, 정체가 드러나는 방을 마지막에 둔 추리 비주얼 노벨.',
+       hook='감정 순서대로 여섯 방을 배치한 추리 비주얼 노벨.',
        thumb='assets/img/who-lobby.jpg', color='#4A5D85'),
 ]
 
@@ -228,7 +228,7 @@ ec = head('잔향 | 김준현', 1, 'home') + '''
 <div class="gallery"><img src="../assets/img/echo-lobby.jpg" alt="스테이지 선택"><img src="../assets/img/echo-plate.jpg" alt="발판과 문"><img src="../assets/img/echo-tower.jpg" alt="2단 탑"><img src="../assets/img/echo-rewind.jpg" alt="되감기"><img src="../assets/img/echo-key.jpg" alt="열쇠와 장벽"><img src="../assets/img/echo-timeout.jpg" alt="시간 종료"></div>
 <p class="cap">스테이지 선택, 발판과 문, 2단 탑, 되감기 연출, 스테이지 10 열쇠와 장벽, 시간 종료 선택. Windows 빌드 v1.0 화면.</p>
 <h3>개요</h3>
-<p>10초 동안의 움직임이 녹화되고, 되감으면 그 기록이 '잔향'이 되어 그대로 다시 움직인다. 과거의 내가 발판을 밟아 문을 열고, 닿지 않는 절벽은 과거의 나를 딛고 오른다. 목표 감정은 "내 계획이 맞아떨어지는 순간의 쾌감". 그 순간이 우연히 오지 않도록, 방마다 정해 둔 방법이 아니면 오를 수 없게 수치로 막았다.</p>
+<p>10초 동안의 움직임이 녹화되고, 되감으면 그 기록이 '잔향'이 되어 그대로 다시 움직인다. 과거의 내가 발판을 밟아 문을 열고, 닿지 않는 절벽은 과거의 나를 딛고 오른다. 목표 감정은 "내 계획이 맞아떨어지는 순간의 쾌감".</p>
 <h3>담당 업무</h3>
 <ul class="l"><li>컨셉 기획서, WBS 작성, 규칙 설계와 30개 방 레벨 디자인, 이동 방법별 수치 밸런싱</li>
 <li>구현 (Claude 협업): 루프와 녹화 시스템, 기믹 10여 종, 로비, HUD, 되감기 연출, 에디터 스크립트로 30개 방 자동 생성</li></ul>
@@ -269,7 +269,6 @@ wa = head('WHO AM I? | 김준현', 1, 'home') + '''
 <tr><td>1. 호감</td><td>언제, 어디서</td><td>인물 정보 없이 배경만 서술해 분위기에 몰입시키고 NPC에게 호감을 갖게 함</td></tr>
 <tr><td>2. 의심, 불안</td><td>무엇을, 어떻게</td><td>사건의 실마리를 드러내 1단계의 호감과 부딪히게 함</td></tr>
 <tr><td>3. 혼란, 선택</td><td>왜, 누가</td><td>NPC 정체를 공개하는 '누가'를 마지막 방에 두어 엔딩 선택(기획 3종, 일정상 2종 구현)에 직결</td></tr></table>
-<p>1단계에서 쌓은 호감이 클수록 마지막 방에서 정체가 드러나는 순간이 무거워지도록, 방의 순서를 감정 순서에 맞췄다.</p>
 <h3>플레이 루프</h3>
 <div class="fig" style="max-width:640px"><img src="../assets/img/whoami_loop.svg" alt="조사, 아이템 획득, 해금, 단서 확인 루프"></div>
 <p>조사, 아이템 획득, 해금, 단서 확인 루프. 스토리 전달이 핵심이라 퍼즐 난이도는 낮추고, 탐색하는 동안 추측이 쌓이도록 했다.</p>
@@ -286,9 +285,9 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 <section class="s"><div class="wrap"><div class="about">
 <img class="ph" src="assets/img/photo.png" alt="김준현">
 <div>
-<p style="font-size:18px;color:var(--navy);font-weight:700">'플레이어가 마지막 한순간에 무엇을 느껴야 하는가'부터 정하고, 그 감정이 터지도록 앞의 규칙과 레벨을 거꾸로 짭니다.</p>
-<p>방송연예학과에서 연극 연출을 하며, 한 장면의 감정을 위해 조명과 음향의 타이밍, 배우의 동선을 계속 연구했습니다. 관객이 지켜보던 그 한순간을 플레이어가 직접 손으로 겪게 하고 싶어 게임 기획을 시작했습니다.</p>
-<div class="chips"><span class="chip">감정 곡선 기반 레벨 설계</span><span class="chip">수치로 의도를 고정하는 규칙 설계</span><span class="chip">바로 구현되는 기획서</span><span class="chip">연출 전공의 장면 구성 감각</span><span class="chip">한순간을 위한 빌드업 설계</span></div>
+<p style="font-size:18px;color:var(--navy);font-weight:700">'플레이어가 이 순간 무엇을 느껴야 하는가'부터 정하고, 그 감정이 생기도록 규칙과 레벨을 거꾸로 짭니다.</p>
+<p>방송연예학과에서 연극 연출을 하며, 한 장면의 감정을 위해 조명과 음향의 타이밍, 배우의 동선을 계속 연구했습니다. 그 경험을 플레이어가 직접 움직이는 게임에서 쓰고 싶어 게임 기획을 시작했습니다.</p>
+<div class="chips"><span class="chip">감정 곡선 기반 레벨 설계</span><span class="chip">수치로 해법을 강제하는 퍼즐</span><span class="chip">바로 구현되는 기획서</span><span class="chip">연출 전공의 장면 구성 감각</span><span class="chip">한순간을 위한 빌드업 설계</span></div>
 <div class="btns"><a class="btn o" href="mailto:junhyeon.kim.work@gmail.com">junhyeon.kim.work@gmail.com</a></div>
 </div></div>
 
