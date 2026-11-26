@@ -38,7 +38,7 @@ def head(title, depth, active):
 def foot(depth):
     p = '../' * depth
     return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
-<script src="{p}assets/site.js?v=7"></script></body></html>'''
+<script src="{p}assets/site.js?v=8"></script></body></html>'''
 
 def card(pr, p):
     if pr['thumb']:
@@ -81,7 +81,7 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 </div></header>
 <section class="s slider-sec"><div class="wrap">
 <div class="sl-tabs" role="tablist"><button class="sl-tab on" data-i="0" role="tab">기획 프로젝트</button><button class="sl-tab" data-i="1" role="tab">게임 분석 및 제안</button></div>
-<div class="slider">
+<div class="slider" data-home="1">
 <button class="sl-arrow sl-prev" aria-label="이전 칸" data-d="-1"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
 <div class="sl-view"><div class="sl-track">
 <div class="sl-panel"><p class="st">카드를 누르면 기획 의도와 설계, 작업 내역을 볼 수 있습니다.</p>
@@ -129,7 +129,7 @@ me = head('메모리 엔더 | 김준현', 1, 'home') + f'''
 <div class="fig"><img src="../assets/img/core_loop.png" alt="코어 루프"></div>
 
 <h3>클라이맥스 설계</h3>
-<p>갑옷 5개를 모두 뜯어내면 데이터 망자만 남는다. 조등(장의사의 장례 도구)을 대고 <b>누르고 있는 9초</b> 동안 마지막 독백 3줄이 흐르고, 손을 떼면 멈춘다. 마지막 줄 "다음 편은… 혼자 봐야 할 거 같아."는 추격의 주마등 "다음 편은 내일 같이 보자."를 회수한다. 이후 현실의 방에서 그녀는 혼자 소파에 앉아, 이유 모를 허전함을 느낀다.</p>
+<p>갑옷(기억) 5개를 모두 뜯어내면 데이터 망자(데이터가 된 망자의 형체)만 남는다. 조등(장의사의 장례 도구)을 대고 <b>누르고 있는 9초</b> 동안 마지막 독백 3줄이 흐르고, 손을 떼면 멈춘다. 마지막 줄 "다음 편은… 혼자 봐야 할 거 같아."는 추격의 주마등 "다음 편은 내일 같이 보자."를 회수한다. 이후 현실의 방에서 그녀는 혼자 소파에 앉아, 이유 모를 허전함을 느낀다.</p>
 
 <h3>문제, 판단, 해결 (튜닝 기록 35항목 중)</h3>
 <table><tr><th style="width:28%">문제 (플레이하며 느낀 점)</th><th style="width:30%">판단</th><th>해결</th></tr>
@@ -154,7 +154,7 @@ write('projects/memory-ender.html', me)
 
 # ---------------- Aftermath ----------------
 af = head('Aftermath | 김준현', 1, 'home') + '''
-<header class="phead"><div class="wrap"><div class="k">PROJECT 02 | 팀 프로젝트, Unity</div><h1>Aftermath</h1><p>3인 온라인 협동 타워 디펜스 (2026.09 ~ 12)</p></div></header>
+<header class="phead"><div class="wrap"><div class="k">PROJECT 02 | 5인 팀, Unity</div><h1>Aftermath</h1><p>3인 온라인 협동 타워 디펜스 (2026.09 ~ 12)</p></div></header>
 <section class="s" style="padding-top:28px"><div class="wrap">
 
   <div class="stats"><div class="stat"><b>40+</b><span>작성한 기획 문서</span></div><div class="stat"><b>73</b><span>규칙 변경 요청, 명세 반영</span></div><div class="stat"><b>37</b><span>Jira 담당 이슈</span></div><div class="stat"><b>10</b><span>1차 빌드 구현 PR</span></div></div>
@@ -241,7 +241,7 @@ ec = head('잔향 | 김준현', 1, 'home') + '''
 <li>Claude로 구현: 루프, 녹화 시스템, 기믹 10여 종, 로비, HUD, 되감기 연출 / 에디터 스크립트로 30개 방 자동 생성</li></ul>
 <h3>레벨 설계: 방법별 도달 높이</h3>
 <table><tr><th>열쇠 든 점프</th><th>맨몸 점프</th><th>잔향 딛기</th><th>잔향 2단 탑 (잔향 위에 잔향)</th><th>잔향 점프대</th></tr><tr><td>2.0</td><td>3.3</td><td>4.5</td><td>5.7</td><td>7.9</td></tr></table>
-<p>절벽 높이를 두 값 사이로 정해 "이 방법이 아니면 오를 수 없는" 방을 만들었다. 방 1에서 새 요소를 소개하고 방 3에서 앞 요소를 조합한다.</p>
+<p>절벽 높이를 두 값 사이로 정해 "이 방법이 아니면 오를 수 없는" 방을 만들었다. 스테이지마다 방 1에서 새 요소를 소개하고, 방 3에서 앞 요소를 조합한다.</p>
 <h3>문제, 판단, 해결</h3>
 <table><tr><th style="width:30%">문제</th><th style="width:30%">판단</th><th>해결</th></tr>
 <tr><td>잔향 위에 서면 함께 떠오르는 버그</td><td>막기보다 퍼즐 재미로 쓸 수 있다</td><td>'잔향 점프대'를 정식 기믹으로 채택, 스테이지 4~5의 중심 규칙으로</td></tr>
@@ -256,7 +256,7 @@ write('projects/echo.html', ec)
 
 # ---------------- WHO AM I ----------------
 wa = head('WHO AM I? | 김준현', 1, 'home') + '''
-<header class="phead"><div class="wrap"><div class="k">PROJECT 04 | 팀 프로젝트</div><h1>WHO AM I?</h1><p>감정 곡선 레벨 설계</p></div></header>
+<header class="phead"><div class="wrap"><div class="k">PROJECT 04 | 5인 팀, 비주얼 노벨</div><h1>WHO AM I?</h1><p>감정 곡선 레벨 설계</p></div></header>
 <section class="s" style="padding-top:28px"><div class="wrap">
 <h3 style="margin-top:0">WHO AM I?: 추리 미스터리 비주얼 노벨 (5인 팀, 1주, 2026.04)</h3>
 <p><b>역할:</b> 시스템, 레벨 디자인, 여섯 방의 감정 곡선과 배치 순서, 방별 조사 루프, 아이템, 상호작용 조건 설계, 팀원이 그대로 구현할 수 있는 조건 문서 작성</p>
@@ -327,7 +327,17 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 
 <section class="s alt"><div class="wrap">
 <h2 class="t">프로젝트 다시 보기</h2><p class="st">궁금한 프로젝트를 골라 기획 의도와 설계 과정을 확인해 보세요.</p>
-<div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div>
+<div class="sl-tabs" role="tablist"><button class="sl-tab on" data-i="0" role="tab">기획 프로젝트</button><button class="sl-tab" data-i="1" role="tab">게임 분석 및 제안</button></div>
+<div class="slider">
+<button class="sl-arrow sl-prev" aria-label="이전 칸" data-d="-1"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+<div class="sl-view"><div class="sl-track">
+<div class="sl-panel"><p class="st">카드를 누르면 기획 의도와 설계, 작업 내역을 볼 수 있습니다.</p>
+<div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div></div>
+<div class="sl-panel"><p class="st">상용 게임의 시스템과 콘텐츠를 분석하고, 개선안과 새 콘텐츠를 제안합니다. 카드를 누르면 분석과 제안 문서를 볼 수 있습니다.</p>
+<div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div></div>
+</div></div>
+<button class="sl-arrow sl-next" aria-label="다음 칸" data-d="1"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+
 </div></section>
 ''' + foot(0)
 write('about.html', ab)
