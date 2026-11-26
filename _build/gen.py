@@ -31,7 +31,7 @@ def head(title, depth, active):
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=10"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=11"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
@@ -204,7 +204,7 @@ af = head('Aftermath | 김준현', 1, 'home') + '''
    <tr><td>3 피난처의 밤</td><td>6.6</td><td>4번</td><td>낮과 밤, 웨이브, 포탑 집중공격, 드래그와 어택땅, 스킬 배우기, W</td></tr>
    <tr><td>4 개척</td><td>12.2</td><td>5번</td><td>정찰, 사냥, 점령지, 망루, 마을 승격, 대장간, 무장, E</td></tr>
    <tr><td>5 동맹</td><td>10.1</td><td>7번</td><td>외교 창, 요청, 정책 카드, 칙령, 지원군 지휘, R</td></tr>
-   <tr><td>6 탈환</td><td>8.5</td><td>8번</td><td>부대 지정과 호출, 세 직업 R 연계</td></tr></table>
+   <tr><td>6 탈환</td><td>8.5</td><td>8번</td><td>부대 지정과 호출</td></tr></table>
   <h3>설계 원칙</h3>
   <ul class="l"><li>판 기능은 장마다 하나씩 켭니다. 2장 영지, 3장 낮과 밤, 4장 필드, 5장 외교, 6장 부대 순서입니다.</li>
    <li>장 안에서는 경험치가 없고, 장 끝에 고정으로 지급해 다음 장의 스킬을 엽니다. 배운 스킬은 다음 장으로 이어집니다.</li>
