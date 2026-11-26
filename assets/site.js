@@ -44,26 +44,41 @@ document.querySelectorAll('a[href$=".pdf"]').forEach(a => { a.target = '_blank';
   const panels = [...sl.querySelectorAll('.sl-panel')], tabs = [...document.querySelectorAll('.sl-tab')];
   const prev = sl.querySelector('.sl-arrow.sl-prev'), next = sl.querySelector('.sl-arrow.sl-next');
   let i = 0;
-  const go = k => {
+  const navs = { home: document.querySelector('[data-nav="home"]'), analysis: document.querySelector('[data-nav="analysis"]') };
+  // 화살표 높이: 카드 첫 줄과 둘째 줄 사이 틈의 가운데, 한 줄이면 카드 가운데
+  const place = () => {
+    const cards = [...panels[i].querySelectorAll('.card')], base = sl.getBoundingClientRect().top;
+    if (!cards.length) return;
+    const r0 = cards[0].getBoundingClientRect(), r2 = cards[2] && cards[2].getBoundingClientRect();
+    const y = r2 ? (r0.bottom + r2.top) / 2 : (r0.top + r0.bottom) / 2;
+    [prev, next].forEach(b => { b.style.top = (y - base) + 'px'; });
+  };
+  const go = (k, push) => {
     i = Math.max(0, Math.min(panels.length - 1, k));
     track.style.transform = `translateX(${-100 * i}%)`;
     view.style.height = panels[i].offsetHeight + 'px';
     tabs.forEach((t, n) => t.classList.toggle('on', n === i));
     prev.disabled = i === 0; next.disabled = i === panels.length - 1;
+    if (navs.home) { navs.home.classList.toggle('on', i === 0); navs.analysis.classList.toggle('on', i === 1); }
+    if (push) history.replaceState(null, '', i === 1 ? '#analysis' : '#projects');
+    place();
   };
-  prev.addEventListener('click', () => go(i - 1));
-  next.addEventListener('click', () => go(i + 1));
-  tabs.forEach((t, n) => t.addEventListener('click', () => go(n)));
+  prev.addEventListener('click', () => go(i - 1, 1));
+  next.addEventListener('click', () => go(i + 1, 1));
+  tabs.forEach((t, n) => t.addEventListener('click', () => go(n, 1)));
+  // 홈에서 상단 메뉴를 누르면 새로 열지 않고 슬라이드
+  Object.entries(navs).forEach(([k, a]) => a && a.addEventListener('click', e => { e.preventDefault(); go(k === 'analysis' ? 1 : 0, 1); sl.closest('section').scrollIntoView({ behavior: 'smooth' }); }));
+  addEventListener('hashchange', () => go(location.hash === '#analysis' ? 1 : 0));
   sl.tabIndex = -1;
   document.addEventListener('keydown', e => {
     if (document.querySelector('.lb.on')) return;
     const r = sl.getBoundingClientRect();
     if (r.bottom < 0 || r.top > innerHeight) return;
-    if (e.key === 'ArrowRight') go(i + 1); else if (e.key === 'ArrowLeft') go(i - 1);
+    if (e.key === 'ArrowRight') go(i + 1, 1); else if (e.key === 'ArrowLeft') go(i - 1, 1);
   });
   let x0 = null;
   view.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
-  view.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+  view.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1), 1); x0 = null; });
   addEventListener('resize', () => go(i));
   addEventListener('load', () => go(i));
   if (location.hash === '#analysis') go(1); else go(0);
