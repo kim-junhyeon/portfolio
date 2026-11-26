@@ -127,3 +127,17 @@ footer a{color:#dfe6f3}
 .doclist .dg a{display:block;font-size:14px;padding:3px 0;border-top:1px dashed #edf0f5}
 .doclist .dg a:first-of-type{border-top:none}
 .doclist .dg a small{color:#8a93a3;font-size:12px;margin-left:4px}
+/* 홈 슬라이더: 기획 프로젝트 / 게임 분석 및 제안 */
+.sl-tabs{display:flex;gap:28px;margin-bottom:14px;border-bottom:1px solid var(--line)}
+.sl-tab{background:none;border:0;font:inherit;font-size:24px;font-weight:700;color:#b3bccb;padding:0 0 10px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+.sl-tab.on{color:var(--navy);border-bottom-color:var(--navy)}
+.slider{position:relative}
+.sl-view{overflow:hidden;transition:height .45s ease}
+.sl-track{display:flex;align-items:flex-start;transition:transform .45s ease}
+.sl-panel{flex:0 0 100%;min-width:0;padding:2px}
+.sl-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:0 4px 14px rgba(27,42,74,.15);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:opacity .2s}
+.sl-arrow svg{width:24px;height:24px;fill:none;stroke:var(--navy);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sl-arrow.prev{left:-72px}.sl-arrow.next{right:-72px}
+.sl-arrow[disabled]{opacity:0;pointer-events:none}
+@media(max-width:1200px){.sl-arrow.prev{left:-8px}.sl-arrow.next{right:-8px}}
+@media(max-width:700px){.sl-tab{font-size:18px}.sl-tabs{gap:18px}.sl-arrow{width:40px;height:40px}}

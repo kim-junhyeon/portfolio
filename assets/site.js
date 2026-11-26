@@ -35,3 +35,36 @@ document.querySelectorAll('.video[data-v]').forEach(el => {
 
 // PDF는 새 탭에서 열기 (사이트를 떠나지 않게)
 document.querySelectorAll('a[href$=".pdf"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+
+// 홈 슬라이더: 화살표, 탭, 좌우 키, 밀어서 넘기기
+(() => {
+  const sl = document.querySelector('.slider');
+  if (!sl) return;
+  const view = sl.querySelector('.sl-view'), track = sl.querySelector('.sl-track');
+  const panels = [...sl.querySelectorAll('.sl-panel')], tabs = [...document.querySelectorAll('.sl-tab')];
+  const prev = sl.querySelector('.sl-arrow.prev'), next = sl.querySelector('.sl-arrow.next');
+  let i = 0;
+  const go = k => {
+    i = Math.max(0, Math.min(panels.length - 1, k));
+    track.style.transform = `translateX(${-100 * i}%)`;
+    view.style.height = panels[i].offsetHeight + 'px';
+    tabs.forEach((t, n) => t.classList.toggle('on', n === i));
+    prev.disabled = i === 0; next.disabled = i === panels.length - 1;
+  };
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => go(i + 1));
+  tabs.forEach((t, n) => t.addEventListener('click', () => go(n)));
+  sl.tabIndex = -1;
+  document.addEventListener('keydown', e => {
+    if (document.querySelector('.lb.on')) return;
+    const r = sl.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    if (e.key === 'ArrowRight') go(i + 1); else if (e.key === 'ArrowLeft') go(i - 1);
+  });
+  let x0 = null;
+  view.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  view.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+  addEventListener('resize', () => go(i));
+  addEventListener('load', () => go(i));
+  if (location.hash === '#analysis') go(1); else go(0);
+})();

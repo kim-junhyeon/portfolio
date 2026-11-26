@@ -31,14 +31,14 @@ def head(title, depth, active):
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=5"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=6"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
 def foot(depth):
     p = '../' * depth
     return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
-<script src="{p}assets/site.js?v=4"></script></body></html>'''
+<script src="{p}assets/site.js?v=5"></script></body></html>'''
 
 def card(pr, p):
     if pr['thumb']:
@@ -79,13 +79,18 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <div class="video" data-v="memory-ender"><div class="ph"><img src="assets/img/me-chase.jpg" alt=""><div><b style="font-size:20px;color:#fff">메모리 엔더 플레이 영상</b><br>영상 준비 중. 아래 버튼으로 바로 플레이할 수 있습니다</div></div></div>
 <div class="btns"><a class="btn p" href="{GAME}" target="_blank" rel="noopener">메모리 엔더 바로 플레이 (약 5분)</a><a class="btn g" href="projects/memory-ender.html">기획 의도 보기</a></div>
 </div></header>
-<section class="s"><div class="wrap">
-<h2 class="t">기획 프로젝트</h2><p class="st">네 프로젝트 모두 마지막 한순간을 먼저 정하고 거기까지의 흐름을 설계했습니다. 카드를 누르면 기획 의도와 설계, 플레이하며 고친 기록을 볼 수 있습니다.</p>
-<div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div>
-</div></section>
-<section class="s alt"><div class="wrap">
-<h2 class="t">게임 분석 및 제안</h2><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 그 구조 위에 새 콘텐츠를 제안합니다.</p>
-<div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div>
+<section class="s slider-sec"><div class="wrap">
+<div class="sl-tabs" role="tablist"><button class="sl-tab on" data-i="0" role="tab">기획 프로젝트</button><button class="sl-tab" data-i="1" role="tab">게임 분석 및 제안</button></div>
+<div class="slider">
+<button class="sl-arrow prev" aria-label="이전 칸" data-d="-1"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+<div class="sl-view"><div class="sl-track">
+<div class="sl-panel"><p class="st">네 프로젝트 모두 마지막 한순간을 먼저 정하고 거기까지의 흐름을 설계했습니다. 카드를 누르면 기획 의도와 설계, 플레이하며 고친 기록을 볼 수 있습니다.</p>
+<div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div></div>
+<div class="sl-panel"><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 그 구조 위에 개선안과 새 콘텐츠를 제안합니다.</p>
+<div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div></div>
+</div></div>
+<button class="sl-arrow next" aria-label="다음 칸" data-d="1"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">
 <a class="box dark" href="about.html"><small>ABOUT</small><b>이 프로젝트들을 만든 사람</b><span>연출 전공에서 게임 기획으로 온 이야기와 일하는 방식</span></a>
