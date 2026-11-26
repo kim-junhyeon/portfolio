@@ -49,7 +49,7 @@ def card(pr, p):
     return f'''<a class="card" href="{p}projects/{pr["slug"]}.html"><div class="thumb">{th}</div><div class="c"><div class="tag">{pr["tag"]}</div><h4>{pr["name"]}</h4><p>{pr["hook"]}</p><div class="more">자세히 보기</div></div></a>'''
 
 CYCLE = [(x['slug'], 'projects/' + x['slug'] + '.html', x['name'], x['hook'], 'NEXT PROJECT') for x in PROJECTS] + \
-        [('analysis', 'analysis.html', '게임 분석 및 제안', '상용 게임이 감정을 쌓고 터뜨리는 구조를 분석하고 개선안을 제안', 'NEXT')]
+        [('analysis', 'analysis.html', '게임 분석 및 제안', '상용 게임의 시스템과 콘텐츠를 분석하고 개선안을 제안', 'NEXT')]
 
 def next_block(slug, depth=1):
     p = '../' * depth
@@ -86,7 +86,7 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <div class="sl-view"><div class="sl-track">
 <div class="sl-panel"><p class="st">카드를 누르면 기획 의도와 설계, 작업 내역을 볼 수 있습니다.</p>
 <div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div></div>
-<div class="sl-panel"><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 개선안과 새 콘텐츠를 제안합니다. 카드를 누르면 분석과 제안 문서를 볼 수 있습니다.</p>
+<div class="sl-panel"><p class="st">상용 게임의 시스템과 콘텐츠를 분석하고, 개선안과 새 콘텐츠를 제안합니다. 카드를 누르면 분석과 제안 문서를 볼 수 있습니다.</p>
 <div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div></div>
 </div></div>
 <button class="sl-arrow sl-next" aria-label="다음 칸" data-d="1"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -94,7 +94,7 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">
 <a class="box dark" href="about.html"><small>ABOUT</small><b>이 프로젝트들을 만든 사람</b><span>연출 전공에서 게임 기획으로 온 이야기와 일하는 방식</span></a>
-<a class="box" href="analysis.html"><small>GAME ANALYSIS &amp; PROPOSAL</small><b>게임 분석 및 제안</b><span>상용 게임의 감정 구조를 분석하고 개선안을 제안</span></a>
+<a class="box" href="analysis.html"><small>GAME ANALYSIS &amp; PROPOSAL</small><b>게임 분석 및 제안</b><span>상용 게임의 시스템과 콘텐츠를 분석하고 개선안을 제안</span></a>
 </div></div></section>
 ''' + foot(0)
 write('index.html', home)
@@ -165,7 +165,7 @@ af = head('Aftermath | 김준현', 1, 'home') + '''
   <table><tr><th style="width:21%">콘텐츠</th><th style="width:47%">한 일</th><th>숫자</th></tr>
    <tr><td>스킬트리</td><td>스킬 상세 기획, 데이터테이블을 구현값에 맞춰 정리, 단일 대상 스킬을 범위형으로 보완</td><td>데이터테이블 v7, 담당별 요청 11건</td></tr>
    <tr><td>튜토리얼</td><td>단계 흐름 기획과 화면 와이어프레임, 이후 캠페인 방식으로 전환</td><td>7단계</td></tr>
-   <tr><td>국왕, 기사, 귀족 추가 콘텐츠</td><td>직업별 세부기획서, 데이터테이블, UI 요구서</td><td>국왕 데이터테이블 v8</td></tr>
+   <tr><td>국왕, 기사, 귀족 추가 콘텐츠</td><td>직업별 세부기획서, 데이터테이블, UI 요청서</td><td>국왕 데이터테이블 v8</td></tr>
    <tr><td>장비 시스템</td><td>슬롯, 일반 장비와 특수 장비, 부여(제작할 때 재료를 더해 효과를 붙임)와 특화 부여(특정 적에게 피해 증가), 아트 요청</td><td>일반 6종, 특수 24종, 아이콘 36종</td></tr>
    <tr><td>국왕 자동화</td><td>영지 단계와 생산 체인 자동화, 가공 대기열 조정</td><td>영지 4단계, 대기열 5칸에서 10칸</td></tr>
    <tr><td>귀족 정책 카드</td><td>낮 이벤트를 완수해 카드를 받고 발동하는 영지 안 콘텐츠 (아래 사례 1)</td><td>카드 21장, 계열 3개</td></tr>
@@ -232,14 +232,14 @@ ec = head('잔향 | 김준현', 1, 'home') + '''
 <div class="video" data-v="echo"><div class="ph" style="background:#3A4F7A"><div><b style="font-size:20px;color:#fff">잔향 플레이 영상</b><br>영상 준비 중</div></div></div>
 <div class="stats"><div class="stat"><b>30</b><span>방 (스테이지 10 × 3)</span></div><div class="stat"><b>10+</b><span>기믹 종류</span></div><div class="stat"><b>1인</b><span>기획 + AI 협업 구현</span></div><div class="stat"><b>1주</b><span>개발 기간</span></div></div>
 <div class="gallery"><img src="../assets/img/echo-lobby.jpg" alt="스테이지 선택"><img src="../assets/img/echo-plate.jpg" alt="발판과 문"><img src="../assets/img/echo-tower.jpg" alt="2단 탑"><img src="../assets/img/echo-rewind.jpg" alt="되감기"><img src="../assets/img/echo-key.jpg" alt="열쇠와 장벽"><img src="../assets/img/echo-timeout.jpg" alt="시간 종료"></div>
-<p class="cap">스테이지 선택, 발판과 문, 2단 탑, 되감기 연출, 스테이지 10 열쇠와 장벽, 시간 종료 선택. Windows 빌드 v1.0 화면.</p>
+<p class="cap">스테이지 선택, 발판과 문, 잔향 2단 탑, 되감기 연출, 스테이지 10 열쇠와 장벽, 시간 종료 선택. Windows 빌드 v1.0 화면.</p>
 <h3>개요</h3>
 <p>10초 동안의 움직임이 녹화되고, 되감으면 그 기록이 '잔향'이 되어 그대로 다시 움직인다. 과거의 내가 발판을 밟아 문을 열고, 닿지 않는 절벽은 과거의 나를 딛고 오른다. 목표 감정은 "내 계획이 맞아떨어지는 순간의 쾌감".</p>
 <h3>담당 업무</h3>
 <ul class="l"><li>컨셉 기획서, WBS 작성, 규칙 설계와 30개 방 레벨 디자인, 이동 방법별 수치 밸런싱</li>
 <li>Claude로 구현: 루프, 녹화 시스템, 기믹 10여 종, 로비, HUD, 되감기 연출 / 에디터 스크립트로 30개 방 자동 생성</li></ul>
 <h3>레벨 설계: 방법별 도달 높이</h3>
-<table><tr><th>열쇠 든 점프</th><th>맨몸 점프</th><th>잔향 딛기</th><th>2단 탑</th><th>잔향 점프대</th></tr><tr><td>2.0</td><td>3.3</td><td>4.5</td><td>5.7</td><td>7.9</td></tr></table>
+<table><tr><th>열쇠 든 점프</th><th>맨몸 점프</th><th>잔향 딛기</th><th>잔향 2단 탑 (잔향 위에 잔향)</th><th>잔향 점프대</th></tr><tr><td>2.0</td><td>3.3</td><td>4.5</td><td>5.7</td><td>7.9</td></tr></table>
 <p>절벽 높이를 두 값 사이로 정해 "이 방법이 아니면 오를 수 없는" 방을 만들었다. 방 1에서 새 요소를 소개하고 방 3에서 앞 요소를 조합한다.</p>
 <h3>문제, 판단, 해결</h3>
 <table><tr><th style="width:30%">문제</th><th style="width:30%">판단</th><th>해결</th></tr>
@@ -272,9 +272,9 @@ wa = head('WHO AM I? | 김준현', 1, 'home') + '''
 <h3>감정 설계: 여섯 방의 배치 순서</h3>
 <div class="fig"><img src="../assets/img/whoami_emotion.svg" alt="감정 단계별 여섯 방 배치"></div>
 <table><tr><th style="width:18%">단계</th><th style="width:20%">방</th><th>설계</th></tr>
-<tr><td>1. 호감</td><td>언제, 어디서</td><td>인물 정보 없이 배경만 서술해 분위기에 몰입시키고 NPC에게 호감을 갖게 함</td></tr>
-<tr><td>2. 의심, 불안</td><td>무엇을, 어떻게</td><td>사건의 실마리를 드러내 1단계의 호감과 부딪히게 함</td></tr>
-<tr><td>3. 혼란, 선택</td><td>왜, 누가</td><td>NPC 정체를 공개하는 '누가'를 마지막 방에 두어 엔딩 선택(기획 3종, 일정상 2종 구현)에 직결</td></tr></table>
+<tr><td>1. 호감</td><td>'언제', '어디서'의 방</td><td>인물 정보 없이 배경만 서술해 분위기에 몰입시키고 NPC에게 호감을 갖게 함</td></tr>
+<tr><td>2. 의심, 불안</td><td>'무엇을', '어떻게'의 방</td><td>사건의 실마리를 드러내 1단계의 호감과 부딪히게 함</td></tr>
+<tr><td>3. 혼란, 선택</td><td>'왜', '누가'의 방</td><td>NPC 정체를 공개하는 '누가'를 마지막 방에 두어 엔딩 선택(기획 3종, 일정상 2종 구현)에 직결</td></tr></table>
 <h3>플레이 루프</h3>
 <div class="fig" style="max-width:640px"><img src="../assets/img/whoami_loop.svg" alt="조사, 아이템 획득, 해금, 단서 확인 루프"></div>
 <p>조사, 아이템 획득, 해금, 단서 확인 루프. 스토리 전달이 핵심이라 퍼즐 난이도는 낮추고, 탐색하는 동안 추측이 쌓이도록 했다.</p>
@@ -333,7 +333,7 @@ write('about.html', ab)
 
 # ---------------- 게임 분석 ----------------
 an = head('게임 분석 및 제안 | 김준현', 0, 'analysis') + '''
-<header class="phead"><div class="wrap"><div class="k">GAME ANALYSIS &amp; PROPOSAL</div><h1>게임 분석 및 제안</h1><p>잘 만든 상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 봅니다. 분석에서 찾은 구조를 바탕으로, 그 게임에 더할 새 콘텐츠도 함께 제안합니다.</p></div></header>
+<header class="phead"><div class="wrap"><div class="k">GAME ANALYSIS &amp; PROPOSAL</div><h1>게임 분석 및 제안</h1><p>상용 게임의 시스템과 콘텐츠를 분석하고, 개선안과 새 콘텐츠를 제안합니다.</p></div></header>
 <section class="s"><div class="wrap">
 <div class="cards">
 <div class="card"><div class="thumb"><div class="txt" style="background:#2F5496">트릭컬 리바이브</div></div><div class="c"><div class="tag">ANALYSIS 01 | 수집형 RPG</div><h4>트릭컬 리바이브</h4><p>분석 문서 준비 중입니다.</p></div></div>
