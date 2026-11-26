@@ -18,6 +18,13 @@ PROJECTS = [
        thumb='assets/img/who-lobby.jpg', color='#4A5D85'),
 ]
 
+ANALYSES = [
+  dict(href='analysis.html', tag='ANALYSIS 01 | 수집형 RPG', name='트릭컬 리바이브', hook='분석 문서 준비 중입니다.', color='#2F5496'),
+]
+
+def acard(a, p):
+    return f'''<a class="card" href="{p}{a["href"]}"><div class="thumb"><div class="txt" style="background:{a["color"]}">{a["name"]}</div></div><div class="c"><div class="tag">{a["tag"]}</div><h4>{a["name"]}</h4><p>{a["hook"]}</p><div class="more">자세히 보기</div></div></a>'''
+
 def head(title, depth, active):
     p = '../' * depth
     nav = [('index.html', '기획 프로젝트', 'home'), ('analysis.html', '게임 분석', 'analysis'), ('about.html', '소개', 'about')]
@@ -75,6 +82,10 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <section class="s"><div class="wrap">
 <h2 class="t">기획 프로젝트</h2><p class="st">네 프로젝트 모두 마지막 한순간을 먼저 정하고 거기까지의 흐름을 설계했습니다. 카드를 누르면 기획 의도와 설계, 플레이하며 고친 기록을 볼 수 있습니다.</p>
 <div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div>
+</div></section>
+<section class="s alt"><div class="wrap">
+<h2 class="t">게임 분석</h2><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 그 구조 위에 새 콘텐츠를 제안합니다.</p>
+<div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div>
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">
 <a class="box dark" href="about.html"><small>ABOUT</small><b>이 프로젝트들을 만든 사람</b><span>연출 전공에서 게임 기획으로 온 이야기와 일하는 방식</span></a>
