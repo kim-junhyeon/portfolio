@@ -8,7 +8,7 @@ PROJECTS = [
        hook='기억을 지우는 장의사가 장례를 거부한 망자를 쫓아, 마지막 장례를 치른다. 쌓아 온 감정을 마지막에 플레이어의 손으로 터뜨리는 구조.',
        thumb='assets/img/me-climax.jpg'),
   dict(slug='aftermath', tag='PROJECT 02 | 5인 팀, Unity', name='Aftermath',
-       hook='3인 온라인 협동 타워 디펜스. 컨셉 원안을 내고 콘텐츠 기획을 맡아, 기획서와 데이터테이블, 요청서로 구현까지 연결했다.',
+       hook='3인 온라인 협동 타워 디펜스. 컨셉 원안을 내고 콘텐츠 기획을 맡아 기획서, 데이터테이블, 요청서 순으로 구현까지 연결했다.',
        thumb='assets/img/af-battle-full.jpg', color='#2F5496'),
   dict(slug='echo', tag='PROJECT 03 | 개인 프로젝트, Unity 6', name='잔향 (Echo)',
        hook='"10초 전의 내가 지금의 동료가 된다", 수치로 정답 루트를 고정한 시간 루프 퍼즐 플랫포머.',
