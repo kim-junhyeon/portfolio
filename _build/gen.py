@@ -57,7 +57,7 @@ def next_block(slug, depth=1):
     nx = CYCLE[(i + 1) % len(CYCLE)]
     hook = nx[3] if len(nx[3]) <= 48 else nx[3][:48] + '…'
     return f'''<section class="next"><div class="wrap"><div class="grid">
-<a class="box dark" href="{p}about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식</span></a>
+<a class="box dark" href="{p}about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식과 AI 활용 범위</span></a>
 <a class="box" href="{p}{nx[1]}"><small>{nx[4]}</small><b>{nx[2]}</b><span>{hook}</span></a>
 </div></div></section>'''
 
@@ -106,8 +106,8 @@ me = head('메모리 엔더 | 김준현', 1, 'home') + f'''
 <div class="video" data-v="memory-ender"><div class="ph"><img src="../assets/img/me-funeral.jpg" alt=""><div><b style="font-size:20px;color:#fff">플레이 영상</b><br>영상 준비 중</div></div></div>
 <div class="btns"><a class="btn n" href="{GAME}" target="_blank" rel="noopener">바로 플레이 (설치 없이 브라우저, 약 5분)</a><a class="btn o" href="../files/memory-ender-gdd.pdf">게임 기획서 PDF</a><a class="btn o" href="https://github.com/sei-ban/memory-ender">저장소</a></div>
 <p class="note" style="margin-top:8px">타이틀의 챕터 선택으로 원하는 구간을 바로 볼 수 있습니다. 클라이맥스는 '3. 장례'.</p>
-<div class="stats"><div class="stat"><b>3구간</b><span>추리, 추격, 장례</span></div><div class="stat"><b>35</b><span>플레이 튜닝 항목</span></div><div class="stat"><b>약 5분</b><span>첫 에피소드</span></div><div class="stat"><b>9초</b><span>클라이맥스, 직접 누르는 시간</span></div></div>
-<table class="info"><tr><td class="h">기간</td><td>2026.11.19 ~ 24 (6일): 기획, 구현, 아트, 웹 배포</td></tr><tr><td class="h">역할</td><td>1인. 기획, 감정 설계, 튜닝 결정 (구현은 Claude 협업)</td></tr><tr><td class="h">장르</td><td>스토리 중심 액션 어드벤처 (현재 빌드는 망자 한 명의 첫 에피소드, 이후 에피소드로 확장)</td></tr><tr><td class="h">사용 툴</td><td>Claude, Claude Code, Git, GitHub Pages</td></tr></table>
+<div class="stats"><div class="stat"><b>3구간</b><span>추리, 추격, 장례</span></div><div class="stat"><b>35</b><span>플레이 튜닝 항목</span></div><div class="stat"><b>약 5분</b><span>첫 에피소드</span></div><div class="stat"><b>1인 + AI</b><span>기획, AI 협업 구현</span></div></div>
+<table class="info"><tr><td class="h">기간</td><td>2026.11.19 ~ 24 (6일): 기획, 구현, 아트, 웹 배포</td></tr><tr><td class="h">역할</td><td>1인, 기획 전반 + AI 협업 구현</td></tr><tr><td class="h">장르</td><td>스토리 중심 액션 어드벤처 (현재 빌드는 망자 한 명의 첫 에피소드, 이후 에피소드로 확장)</td></tr><tr><td class="h">사용 툴</td><td>Claude, Claude Code, Git, GitHub Pages</td></tr></table>
 <div class="gallery"><img src="../assets/img/me-title.jpg" alt="타이틀"><img src="../assets/img/me-investigate.jpg" alt="추리"><img src="../assets/img/me-chase.jpg" alt="추격"><img src="../assets/img/me-funeral.jpg" alt="장례"><img src="../assets/img/me-memory.jpg" alt="기억 장면"><img src="../assets/img/me-climax.jpg" alt="클라이맥스"></div>
 <p class="cap">타이틀, 추리, 추격, 장례, 기억 장면, 클라이맥스. 외부 이미지 없이 코드로 그린 도트 그림이고, 사운드는 브라우저에서 직접 합성했다.</p>
 
@@ -140,9 +140,14 @@ me = head('메모리 엔더 | 김준현', 1, 'home') + f'''
 <tr><td>주마등 문장이 흡수 완료 시점에 나옴</td><td>망자가 맞은 타이밍에 나와야 한다</td><td>공개 시점을 <b>명중 순간</b>으로 이동 (2.6초)</td></tr></table>
 <p class="note">전체 35항목은 게임 기획서 7-5~7-7에 변경 전, 후 수치와 이유를 함께 기록했다.</p>
 
-<h3>한순간을 지키기 위해 바꾼 것</h3>
-<p>장례는 처음에 버튼을 누르고 있는 단순 홀드였다. 지우는 행위 자체가 감정을 만들어야 한다고 판단해, 갑옷 파츠를 정해진 순서로 직접 뜯어내는 조작으로 다시 설계했다. 마지막 9초의 누르기는 끝낼지를 플레이어가 쥐고 있게 하는 장치라 끝까지 남겼다.</p>
-<div class="lesson"><b>배운 점</b>한순간은 그 장면만 잘 만든다고 터지지 않았다. 앞에서 쌓인 감정이 있어야 같은 9초가 무거워졌고, 그래서 늘어짐과 불합리한 순간을 걷어 내는 튜닝이 클라이맥스를 만드는 일만큼 중요했다.</div>
+<h3>AI 협업: 역할 분담</h3>
+<table><tr><th style="width:16%">영역</th><th style="width:42%">본인</th><th>AI (Claude)</th></tr>
+<tr><td>기획, 설계</td><td>세계관, 스토리, 감정 설계, 조작 규칙, 클라이맥스 구조 결정</td><td>선택지 제시, 문구 초안 2~3안</td></tr>
+<tr><td>구현</td><td>플레이 테스트, 버그, 불편 판단</td><td>코드 작성, 사운드 합성, 자동 플레이 테스트</td></tr>
+<tr><td>튜닝</td><td>직접 플레이 후 수치, 규칙 변경 결정, 이유 작성</td><td>요청한 변경을 즉시 빌드에 반영</td></tr>
+<tr><td>문서</td><td>기획 의도, 판단 근거, 최종 확정</td><td>표, 서식 정리, 확정 내용 초안</td></tr></table>
+<p class="note">AI 초안을 그대로 쓰지 않은 사례: 장례 단순 홀드를 반려하고 갑옷 뜯기로 재설계 / 세계관과 어긋난 단서, 스토리 초안을 직접 수정 / AI가 임의로 뺀 '누르기' 조작을 복구하고 "사용자가 정한 구조는 AI가 바꾸지 않는다"는 작업 규칙 추가</p>
+<div class="lesson"><b>배운 점</b>수치에 약해 숫자만으로는 판단이 안 됐지만, AI로 바로 만들어 직접 플레이하며 수치와 타이밍을 고치는 방식으로 그 약점을 보완했다.</div>
 </div></section>
 ''' + foot(1)
 write('projects/memory-ender.html', me)
@@ -224,14 +229,14 @@ ec = head('잔향 | 김준현', 1, 'home') + '''
 <header class="phead"><div class="wrap"><div class="k">PROJECT 03 | 개인 프로젝트, Unity 6</div><h1>잔향 (Echo)</h1><p>"10초 전의 내가 지금의 동료가 된다", 시간 루프 퍼즐 플랫포머 (2026.09.11 ~ 09.18)</p></div></header>
 <section class="s" style="padding-top:28px"><div class="wrap">
 <div class="video" data-v="echo"><div class="ph" style="background:#3A4F7A"><div><b style="font-size:20px;color:#fff">잔향 플레이 영상</b><br>영상 준비 중</div></div></div>
-<div class="stats"><div class="stat"><b>30</b><span>방 (스테이지 10 × 3)</span></div><div class="stat"><b>10+</b><span>기믹 종류</span></div><div class="stat"><b>5단계</b><span>방법별 도달 높이로 나눈 정답 루트</span></div><div class="stat"><b>1주</b><span>개발 기간</span></div></div>
+<div class="stats"><div class="stat"><b>30</b><span>방 (스테이지 10 × 3)</span></div><div class="stat"><b>10+</b><span>기믹 종류</span></div><div class="stat"><b>1인</b><span>기획 + AI 협업 구현</span></div><div class="stat"><b>1주</b><span>개발 기간</span></div></div>
 <div class="gallery"><img src="../assets/img/echo-lobby.jpg" alt="스테이지 선택"><img src="../assets/img/echo-plate.jpg" alt="발판과 문"><img src="../assets/img/echo-tower.jpg" alt="2단 탑"><img src="../assets/img/echo-rewind.jpg" alt="되감기"><img src="../assets/img/echo-key.jpg" alt="열쇠와 장벽"><img src="../assets/img/echo-timeout.jpg" alt="시간 종료"></div>
 <p class="cap">스테이지 선택, 발판과 문, 2단 탑, 되감기 연출, 스테이지 10 열쇠와 장벽, 시간 종료 선택. Windows 빌드 v1.0 화면.</p>
 <h3>개요</h3>
 <p>10초 동안의 움직임이 녹화되고, 되감으면 그 기록이 '잔향'이 되어 그대로 다시 움직인다. 과거의 내가 발판을 밟아 문을 열고, 닿지 않는 절벽은 과거의 나를 딛고 오른다. 목표 감정은 "내 계획이 맞아떨어지는 순간의 쾌감".</p>
 <h3>담당 업무</h3>
 <ul class="l"><li>컨셉 기획서, WBS 작성, 규칙 설계와 30개 방 레벨 디자인, 이동 방법별 수치 밸런싱</li>
-<li>구현 (Claude 협업): 루프와 녹화 시스템, 기믹 10여 종, 로비, HUD, 되감기 연출, 에디터 스크립트로 30개 방 자동 생성</li></ul>
+<li>Claude로 구현: 루프, 녹화 시스템, 기믹 10여 종, 로비, HUD, 되감기 연출 / 에디터 스크립트로 30개 방 자동 생성</li></ul>
 <h3>레벨 설계: 방법별 도달 높이</h3>
 <table><tr><th>열쇠 든 점프</th><th>맨몸 점프</th><th>잔향 딛기</th><th>2단 탑</th><th>잔향 점프대</th></tr><tr><td>2.0</td><td>3.3</td><td>4.5</td><td>5.7</td><td>7.9</td></tr></table>
 <p>절벽 높이를 두 값 사이로 정해 "이 방법이 아니면 오를 수 없는" 방을 만들었다. 방 1에서 새 요소를 소개하고 방 3에서 앞 요소를 조합한다.</p>
@@ -287,7 +292,7 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 <div>
 <p style="font-size:18px;color:var(--navy);font-weight:700">'플레이어가 이 순간 무엇을 느껴야 하는가'부터 정하고, 그 감정이 생기도록 규칙과 레벨을 거꾸로 짭니다.</p>
 <p>방송연예학과에서 연극 연출을 하며, 한 장면의 감정을 위해 조명과 음향의 타이밍, 배우의 동선을 계속 연구했습니다. 그 경험을 플레이어가 직접 움직이는 게임에서 쓰고 싶어 게임 기획을 시작했습니다.</p>
-<div class="chips"><span class="chip">감정 곡선 기반 레벨 설계</span><span class="chip">수치로 해법을 강제하는 퍼즐</span><span class="chip">바로 구현되는 기획서</span><span class="chip">연출 전공의 장면 구성 감각</span><span class="chip">한순간을 위한 빌드업 설계</span></div>
+<div class="chips"><span class="chip">감정 곡선 기반 레벨 설계</span><span class="chip">수치로 해법을 강제하는 퍼즐</span><span class="chip">바로 구현되는 기획서</span><span class="chip">연출 전공의 장면 구성 감각</span><span class="chip">AI와 함께 끝까지 구현</span></div>
 <div class="btns"><a class="btn o" href="mailto:junhyeon.kim.work@gmail.com">junhyeon.kim.work@gmail.com</a></div>
 </div></div>
 
@@ -302,13 +307,17 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 
 <h3>일하는 방식</h3>
 <table><tr><th style="width:18%">단계</th><th>방식</th></tr>
-<tr><td>규칙부터</td><td>작업 전에 목표 감정과 지킬 규칙을 문서로 먼저 정하고, 이후 결정은 그 문서를 기준으로 내린다</td></tr>
-<tr><td>동기화</td><td>팀 작업은 깃허브, Jira, Confluence에서 진행 상황부터 맞춘다. 팀원 작업물을 건드리지 않도록 올리는 절차를 정해 두고 지킨다</td></tr>
-<tr><td>토론</td><td>초안을 내면 안 되는 이유부터 반론을 받아 보고, 남는 것만 결정한다</td></tr>
+<tr><td>규칙부터</td><td>작업 방향을 정하는 세션을 먼저 열어 규칙 문서를 만들고, AI 프로젝트에 넣어 둔다</td></tr>
+<tr><td>동기화</td><td>팀 작업은 깃허브, Jira, Confluence에서 읽어 와 진행 상황부터 맞춘다. 팀원 작업물을 건드리지 않도록 절차를 스킬로 고정</td></tr>
+<tr><td>토론</td><td>내 초안을 주고 이유와 안 되는 점을 반론하게 한 뒤 결정한다</td></tr>
 <tr><td>검증</td><td>간단히 구현해 직접 플레이하며 조정한다. 재미와 감정은 내가 판단한다</td></tr></table>
 
-<h3>AI 활용</h3>
-<p>코드와 문서 초안은 Claude와 함께 만들었고, 기획과 규칙, 수치 결정, 플레이 검증은 직접 했습니다.</p>
+<h3>AI 활용 범위</h3>
+<table><tr><th style="width:18%">결과물</th><th style="width:40%">본인</th><th>AI (Claude)</th></tr>
+<tr><td>메모리 엔더</td><td>기획, 설계, 튜닝 결정, 플레이 테스트</td><td>코드, 사운드 합성, 문구, 문서 초안</td></tr>
+<tr><td>잔향</td><td>기획, 레벨 디자인, 수치 밸런싱</td><td>시스템, 기믹 코드</td></tr>
+<tr><td>Aftermath</td><td>콘텐츠 기획, 방향 결정, 검토, 수정</td><td>문서 초안, 검산, 충돌 확인</td></tr>
+<tr><td>이 사이트</td><td>구성, 내용 결정</td><td>페이지 코드, 내용 정리</td></tr></table>
 
 <h3>도구</h3>
 <div class="chips"><span class="chip">Unity 6</span><span class="chip">VS Code</span><span class="chip">Git</span><span class="chip">Claude, Claude Code</span><span class="chip">Jira</span><span class="chip">Confluence</span><span class="chip">Notion</span><span class="chip">Excel</span><span class="chip">PowerPoint</span></div>

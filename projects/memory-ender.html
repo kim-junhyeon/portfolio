@@ -4,15 +4,15 @@
 <nav class="top"><div class="wrap"><a class="brand" href="../index.html">김준현<span>게임 기획 포트폴리오</span></a><ul><li><a href="../index.html#projects" class="on" data-nav="home">기획 프로젝트</a></li><li><a href="../index.html#analysis" class="" data-nav="analysis">게임 분석 및 제안</a></li><li><a href="../about.html" class="" data-nav="about">소개</a></li></ul></div></nav>
 
 <header class="phead"><div class="wrap"><div class="k">PROJECT 01 | 개인 프로젝트, 웹 게임</div><h1>메모리 엔더 (Memory Ender)</h1><p>기억을 지우는 장의사가 장례를 거부한 망자를 쫓아, 마지막 장례를 치른다</p></div></header><section class="next top"><div class="wrap"><div class="grid">
-<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식</span></a>
+<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식과 AI 활용 범위</span></a>
 <a class="box" href="../projects/aftermath.html"><small>NEXT PROJECT</small><b>Aftermath</b><span>3인 온라인 협동 타워 디펜스. 컨셉 원안을 내고 콘텐츠 기획을 맡아, 기획서와 데이터…</span></a>
 </div></div></section>
 <section class="s" style="padding-top:28px"><div class="wrap">
 <div class="video" data-v="memory-ender"><div class="ph"><img src="../assets/img/me-funeral.jpg" alt=""><div><b style="font-size:20px;color:#fff">플레이 영상</b><br>영상 준비 중</div></div></div>
 <div class="btns"><a class="btn n" href="https://sei-ban.github.io/memory-ender/?v=1124" target="_blank" rel="noopener">바로 플레이 (설치 없이 브라우저, 약 5분)</a><a class="btn o" href="../files/memory-ender-gdd.pdf">게임 기획서 PDF</a><a class="btn o" href="https://github.com/sei-ban/memory-ender">저장소</a></div>
 <p class="note" style="margin-top:8px">타이틀의 챕터 선택으로 원하는 구간을 바로 볼 수 있습니다. 클라이맥스는 '3. 장례'.</p>
-<div class="stats"><div class="stat"><b>3구간</b><span>추리, 추격, 장례</span></div><div class="stat"><b>35</b><span>플레이 튜닝 항목</span></div><div class="stat"><b>약 5분</b><span>첫 에피소드</span></div><div class="stat"><b>9초</b><span>클라이맥스, 직접 누르는 시간</span></div></div>
-<table class="info"><tr><td class="h">기간</td><td>2026.11.19 ~ 24 (6일): 기획, 구현, 아트, 웹 배포</td></tr><tr><td class="h">역할</td><td>1인. 기획, 감정 설계, 튜닝 결정 (구현은 Claude 협업)</td></tr><tr><td class="h">장르</td><td>스토리 중심 액션 어드벤처 (현재 빌드는 망자 한 명의 첫 에피소드, 이후 에피소드로 확장)</td></tr><tr><td class="h">사용 툴</td><td>Claude, Claude Code, Git, GitHub Pages</td></tr></table>
+<div class="stats"><div class="stat"><b>3구간</b><span>추리, 추격, 장례</span></div><div class="stat"><b>35</b><span>플레이 튜닝 항목</span></div><div class="stat"><b>약 5분</b><span>첫 에피소드</span></div><div class="stat"><b>1인 + AI</b><span>기획, AI 협업 구현</span></div></div>
+<table class="info"><tr><td class="h">기간</td><td>2026.11.19 ~ 24 (6일): 기획, 구현, 아트, 웹 배포</td></tr><tr><td class="h">역할</td><td>1인, 기획 전반 + AI 협업 구현</td></tr><tr><td class="h">장르</td><td>스토리 중심 액션 어드벤처 (현재 빌드는 망자 한 명의 첫 에피소드, 이후 에피소드로 확장)</td></tr><tr><td class="h">사용 툴</td><td>Claude, Claude Code, Git, GitHub Pages</td></tr></table>
 <div class="gallery"><img src="../assets/img/me-title.jpg" alt="타이틀"><img src="../assets/img/me-investigate.jpg" alt="추리"><img src="../assets/img/me-chase.jpg" alt="추격"><img src="../assets/img/me-funeral.jpg" alt="장례"><img src="../assets/img/me-memory.jpg" alt="기억 장면"><img src="../assets/img/me-climax.jpg" alt="클라이맥스"></div>
 <p class="cap">타이틀, 추리, 추격, 장례, 기억 장면, 클라이맥스. 외부 이미지 없이 코드로 그린 도트 그림이고, 사운드는 브라우저에서 직접 합성했다.</p>
 
@@ -45,12 +45,17 @@
 <tr><td>주마등 문장이 흡수 완료 시점에 나옴</td><td>망자가 맞은 타이밍에 나와야 한다</td><td>공개 시점을 <b>명중 순간</b>으로 이동 (2.6초)</td></tr></table>
 <p class="note">전체 35항목은 게임 기획서 7-5~7-7에 변경 전, 후 수치와 이유를 함께 기록했다.</p>
 
-<h3>한순간을 지키기 위해 바꾼 것</h3>
-<p>장례는 처음에 버튼을 누르고 있는 단순 홀드였다. 지우는 행위 자체가 감정을 만들어야 한다고 판단해, 갑옷 파츠를 정해진 순서로 직접 뜯어내는 조작으로 다시 설계했다. 마지막 9초의 누르기는 끝낼지를 플레이어가 쥐고 있게 하는 장치라 끝까지 남겼다.</p>
-<div class="lesson"><b>배운 점</b>한순간은 그 장면만 잘 만든다고 터지지 않았다. 앞에서 쌓인 감정이 있어야 같은 9초가 무거워졌고, 그래서 늘어짐과 불합리한 순간을 걷어 내는 튜닝이 클라이맥스를 만드는 일만큼 중요했다.</div>
+<h3>AI 협업: 역할 분담</h3>
+<table><tr><th style="width:16%">영역</th><th style="width:42%">본인</th><th>AI (Claude)</th></tr>
+<tr><td>기획, 설계</td><td>세계관, 스토리, 감정 설계, 조작 규칙, 클라이맥스 구조 결정</td><td>선택지 제시, 문구 초안 2~3안</td></tr>
+<tr><td>구현</td><td>플레이 테스트, 버그, 불편 판단</td><td>코드 작성, 사운드 합성, 자동 플레이 테스트</td></tr>
+<tr><td>튜닝</td><td>직접 플레이 후 수치, 규칙 변경 결정, 이유 작성</td><td>요청한 변경을 즉시 빌드에 반영</td></tr>
+<tr><td>문서</td><td>기획 의도, 판단 근거, 최종 확정</td><td>표, 서식 정리, 확정 내용 초안</td></tr></table>
+<p class="note">AI 초안을 그대로 쓰지 않은 사례: 장례 단순 홀드를 반려하고 갑옷 뜯기로 재설계 / 세계관과 어긋난 단서, 스토리 초안을 직접 수정 / AI가 임의로 뺀 '누르기' 조작을 복구하고 "사용자가 정한 구조는 AI가 바꾸지 않는다"는 작업 규칙 추가</p>
+<div class="lesson"><b>배운 점</b>수치에 약해 숫자만으로는 판단이 안 됐지만, AI로 바로 만들어 직접 플레이하며 수치와 타이밍을 고치는 방식으로 그 약점을 보완했다.</div>
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">
-<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식</span></a>
+<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식과 AI 활용 범위</span></a>
 <a class="box" href="../projects/aftermath.html"><small>NEXT PROJECT</small><b>Aftermath</b><span>3인 온라인 협동 타워 디펜스. 컨셉 원안을 내고 콘텐츠 기획을 맡아, 기획서와 데이터…</span></a>
 </div></div></section><footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="https://sei-ban.github.io/memory-ender/?v=1124" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
 <script src="../assets/site.js?v=7"></script></body></html>
