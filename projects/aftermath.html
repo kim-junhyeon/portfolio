@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aftermath | 김준현</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
+<link rel="stylesheet" href="../assets/style.css?v=5"></head><body>
+<nav class="top"><div class="wrap"><a class="brand" href="../index.html">김준현<span>게임 기획 포트폴리오</span></a><ul><li><a href="../index.html" class="on">기획 프로젝트</a></li><li><a href="../analysis.html" class="">게임 분석</a></li><li><a href="../about.html" class="">소개</a></li></ul></div></nav>
+
+<header class="phead"><div class="wrap"><div class="k">PROJECT 02 | 팀 프로젝트, Unity</div><h1>Aftermath</h1><p>3인 온라인 협동 타워 디펜스 (2026.09 ~ 12). 게임 컨셉 원안을 냈다 (컨셉 원페이저, 원안 김준현, 편집 팀원).</p></div></header><section class="next top"><div class="wrap"><div class="grid">
+<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
+<a class="box" href="echo.html"><small>NEXT PROJECT</small><b>잔향 (Echo)</b><span>"10초 전의 내가 지금의 동료가 된다". 계획이 맞아떨어지는 순간을 위해, 수치로 정…</span></a>
+</div></div></section>
+<section class="s" style="padding-top:28px"><div class="wrap">
+
+  <div class="stats"><div class="stat"><b>40+</b><span>작성한 기획 문서</span></div><div class="stat"><b>73</b><span>규칙 변경 요청, 명세 반영</span></div><div class="stat"><b>37</b><span>Jira 담당 이슈</span></div><div class="stat"><b>10</b><span>1차 빌드 구현 PR</span></div></div>
+  <table class="info"><tr><td class="h">기간</td><td>2026.09 ~ 12 (12.04 발표회)</td><td class="h">역할</td><td>컨셉 원안, 콘텐츠 기획 (5인 팀)</td></tr><tr><td class="h">장르</td><td>3인 온라인 협동 타워 디펜스 (PC)</td><td class="h">사용 툴</td><td>Unity, Jira, Confluence, Git, Claude</td></tr></table>
+  <div class="gallery"><img src="../assets/img/af-title.jpg" alt="타이틀"><img src="../assets/img/af-day-full.jpg" alt="낮 준비"><img src="../assets/img/af-battle-full.jpg" alt="밤 전투"><img src="../assets/img/af-skill-full.jpg" alt="스킬트리"><img src="../assets/img/af-estate-full.jpg" alt="국왕 영지"><img src="../assets/img/af-diplo-full.jpg" alt="귀족 외교"></div>
+  <p class="cap">타이틀, 낮 준비, 밤 전투, 스킬트리, 국왕 영지, 귀족 외교. 개발 빌드 화면이며 아트와 구현은 팀 공동 작업이다.</p>
+  <h3>담당한 콘텐츠</h3>
+  <table><tr><th style="width:21%">콘텐츠</th><th style="width:47%">한 일</th><th>숫자</th></tr>
+   <tr><td>스킬트리</td><td>스킬 상세 기획, 데이터테이블을 구현값에 맞춰 정리, 단일 대상 스킬을 범위형으로 보완</td><td>데이터테이블 v7, 담당별 요청 11건</td></tr>
+   <tr><td>튜토리얼</td><td>단계 흐름 기획과 화면 와이어프레임, 이후 캠페인 방식으로 전환</td><td>7단계</td></tr>
+   <tr><td>국왕, 기사, 귀족 추가 콘텐츠</td><td>직업별 세부기획서, 데이터테이블, UI 요구서</td><td>국왕 데이터테이블 v8</td></tr>
+   <tr><td>장비 시스템</td><td>슬롯, 일반 장비와 특수 장비, 부여 규칙, 아트 요청</td><td>일반 6종, 특수 24종, 아이콘 36종</td></tr>
+   <tr><td>국왕 자동화</td><td>영지 단계와 생산 체인 자동화, 가공 대기열 조정</td><td>영지 4단계, 대기열 5칸에서 10칸</td></tr>
+   <tr><td>귀족 정책 카드</td><td>낮 이벤트를 완수해 카드를 받고 발동하는 영지 안 콘텐츠 (아래 사례 1)</td><td>카드 21장, 계열 3개</td></tr>
+   <tr><td>프롤로그 캠페인</td><td>6장 전체 흐름과 장별 세부기획 (아래 사례 2)</td><td>6장, 계산 58.4분</td></tr></table>
+  <h3>구현 담당이 바로 작업할 수 있는 전달 방식</h3>
+  <table><tr><th style="width:22%">단계</th><th>내용</th></tr>
+   <tr><td>기획서</td><td>규칙, 예외, 수치의 의도를 먼저 쓰고 상세는 표로</td></tr>
+   <tr><td>데이터테이블</td><td>수치의 원본. 기획서보다 우선하도록 버전 관리</td></tr>
+   <tr><td>구현, UI, 아트 요청서</td><td>받는 사람별로 나눠 무엇을, 왜, 어떤 우선순위로 할지만 전달. 구현 방식은 담당이 결정</td></tr></table>
+  <h3>구현과 기획이 어긋난 곳 정리</h3>
+  <p>스킬 데이터테이블을 dev에 구현된 값과 맞춰 보니 액티브 스킬 63개가 전부 기본 쿨다운 18초였고, 랭크를 올려도 효과가 늘지 않게 랭크당 키 23개가 비어 있었습니다. 충돌 정리 시트로 근거를 남기고 담당별 요청 11건으로 나눠 전달했습니다.</p>
+<h2 style="margin:44px 0 6px;color:var(--navy);font-size:24px">사례 1. 귀족 정책 카드: 문제에서 문서 세트까지 이틀</h2>
+
+  <h3>문제</h3>
+  <p>11월 9일 회의에서 귀족이 영지를 지키지 않고 기사를 따라다닌다는 문제가 나왔습니다. 원인은 귀족이 영지 안에서 할 콘텐츠가 부족한 것으로 정리됐고, 영지 안에서 할 일을 만드는 정책 카드를 기획했습니다.</p>
+  <h3>핵심 규칙</h3>
+  <table><tr><th style="width:20%">항목</th><th>규칙</th></tr>
+   <tr><td>하루 흐름</td><td>낮 시작에 이벤트가 동시에 뜸. 최대 4개 수락(취소 불가), 완수하면 그 계열 카드 2장 중 1장. 하루 최대 3장 발동 후 소멸, 보유 6장, 남은 카드는 이월</td></tr>
+   <tr><td>카드</td><td>21장, 계열 3개 (군사, 경제, 민생). 같은 계열 2장, 3장을 모으면 특수 효과와 세력 우호 +10</td></tr>
+   <tr><td>수락과 우호</td><td>수락하지 않은 이벤트는 벌 없음, 수락한 뒤 실패하면 우호 −10. 3일 연속 방치하면 경고 사절</td></tr>
+   <tr><td>전용 이벤트</td><td>하루 2개 (영지 안 1, 밖 1). 판정은 낮, 귀족은 돕는 역할</td></tr>
+   <tr><td>업그레이드</td><td>대사관 Lv3, Lv5에서 수락 수나 보유 수 중 하나를 고름. 하루 발동 3장은 늘지 않음</td></tr>
+   <tr><td>난이도 표시</td><td>별 1~3은 걸리는 시간, 칼은 전투, 왕관은 국왕 필요, 투구는 기사 필요. 이벤트마다 고정값</td></tr></table>
+  <h3>만든 문서와 받는 사람</h3>
+  <table><tr><th style="width:24%">문서</th><th style="width:18%">받는 사람</th><th>내용</th></tr>
+   <tr><td>기획 초안</td><td>팀 전체</td><td>기획 의도, 기존 기능과의 관계, 흐름, 카드 목록, 민심 개편, 이벤트 목록</td></tr>
+   <tr><td>데이터테이블 v1</td><td>구현, 수치</td><td>상수, 카드 21장, 묶음 보너스, 민심, 이벤트, 이벤트 난이도, 업그레이드</td></tr>
+   <tr><td>UI 요청서</td><td>UI 기획</td><td>화면 요청 9건과 난이도 표시 레퍼런스. 새 아트 없이 기존 카드 형식 재사용</td></tr>
+   <tr><td>구현 요청서</td><td>구현</td><td>구현 요청 9건, 구현 쪽에 확인할 질문 5건</td></tr>
+   <tr><td>규칙 변경 요청</td><td>팀 전체</td><td>기존 규칙과 충돌하는 6건(R-65~R-70)을 현재 규칙, 변경 요청, 사유, 영향으로 정리</td></tr>
+   <tr><td>대사관 건물 삭제 제안</td><td>팀 전체</td><td>정책 카드가 대사관 역할을 대신하게 되어 건물 삭제를 제안, 합의 완료</td></tr></table>
+  <div class="lesson"><b>결과</b>11월 9일 회의 후 11일까지 문서 세트를 완성하고 dev에 반영했습니다(PR #357). 수치는 전부 임시값으로 두고 플레이테스트 뒤 확정하기로 했습니다.</div>
+<h2 style="margin:44px 0 6px;color:var(--navy);font-size:24px">사례 2. 프롤로그 캠페인: 튜토리얼을 6장 이야기로</h2>
+
+  <h3>왜 캠페인인가</h3>
+  <p>10월 27일 회의에서 7단계 튜토리얼을 캠페인으로 바꾸기로 했습니다. 세 직업(국왕, 기사, 귀족)과 판 기능이 많아 한 번에 가르치면 놓치기 쉬워서, 장마다 기능을 하나씩 켜고 정해진 순서로 직업을 바꿔 가며 배우게 했습니다.</p>
+  <h3>장별 흐름</h3>
+  <table><tr><th style="width:12%">장</th><th style="width:9%">분</th><th style="width:13%">직업 전환</th><th>새로 가르치는 것</th></tr>
+   <tr><td>1 함락</td><td>9.2</td><td>1번</td><td>이동, 화면, 공격, Q, 직업 전환</td></tr>
+   <tr><td>2 피난처</td><td>11.8</td><td>4번</td><td>영지 창, 돈과 빵과 노동력 체인, 병영, 송금, 벽과 포탑</td></tr>
+   <tr><td>3 피난처의 밤</td><td>6.6</td><td>4번</td><td>낮과 밤, 웨이브, 포탑 집중공격, 드래그와 어택땅, 스킬 배우기, W</td></tr>
+   <tr><td>4 개척</td><td>12.2</td><td>5번</td><td>정찰, 사냥, 점령지, 망루, 마을 승격, 대장간, 무장, E</td></tr>
+   <tr><td>5 동맹</td><td>10.1</td><td>7번</td><td>외교 창, 요청, 정책 카드, 칙령, 지원군 지휘, R</td></tr>
+   <tr><td>6 탈환</td><td>8.5</td><td>8번</td><td>부대 지정과 호출, 세 직업 R 연계</td></tr></table>
+  <h3>설계 원칙</h3>
+  <ul class="l"><li>마지막 6장 탈환에서 세 직업의 R 스킬을 함께 쓰게 해, 다섯 장 동안 하나씩 배운 기능이 한 장면에서 모이도록 했습니다.</li>
+   <li>판 기능은 장마다 하나씩 켭니다. 2장 영지, 3장 낮과 밤, 4장 필드, 5장 외교, 6장 부대 순서입니다.</li>
+   <li>장 안에서는 경험치가 없고, 장 끝에 고정으로 지급해 다음 장의 스킬을 엽니다. 배운 스킬은 다음 장으로 이어집니다.</li>
+   <li>안내 문구나 연출 없이 인물 대사로만 이야기를 전합니다. 스토리 작성 규칙을 문서로 따로 만들어 장마다 같은 기준으로 썼습니다.</li>
+   <li>목표 시간 90분에 억지로 맞추지 않고, 장마다 계산한 시간(합계 58.4분)을 그대로 따랐습니다.</li>
+   <li>장마다 체크포인트를 2~3곳 두고, 저장 대신 단계별 고정 상태로 다시 시작합니다.</li></ul>
+  <div class="lesson"><b>회고</b>장별 세부 명세와 스크립트를 팀원 두 명에게 나눠 맡겼지만, 업무 범위만 전하고 기준을 문서로 주지 않아 결과물을 쓰지 못했습니다. 남은 기간에 직접 다시 작업해 6장을 완성했고, 그 뒤로는 지시서를 md 파일로 만들어 질문과 답을 문서로 주고받으며 방향을 맞췄습니다.</div>
+  <h3>작업 문서 (27건)</h3>
+<p class="note">팀 저장소에 남긴 본인 담당 문서를 읽기 쉽게 다시 편집했습니다. AI(Claude)로 초안과 표 정리를 하고, 기획 방향과 규칙, 수치 결정과 검토는 본인이 했습니다.</p>
+<div class="doclist"><div class="dg"><b>정책 카드</b><a href="../files/aftermath/policy-card-plan.pdf">귀족 정책 카드 기획 초안 <small>10쪽</small></a><a href="../files/aftermath/policy-card-ui-request.pdf">귀족 정책 카드 UI 요청서 <small>6쪽</small></a><a href="../files/aftermath/policy-card-impl-request.pdf">귀족 정책 카드 구현 요청서 <small>12쪽</small></a></div><div class="dg"><b>프롤로그 캠페인</b><a href="../files/aftermath/campaign-overview.pdf">프롤로그 캠페인 전체 기획서 <small>7쪽</small></a><a href="../files/aftermath/campaign-ch1.pdf">프롤로그 캠페인 1장 세부기획서 <small>24쪽</small></a><a href="../files/aftermath/campaign-ch2.pdf">프롤로그 캠페인 2장 세부기획서 <small>24쪽</small></a><a href="../files/aftermath/campaign-ch3.pdf">프롤로그 캠페인 3장 세부기획서 <small>15쪽</small></a><a href="../files/aftermath/campaign-ch4.pdf">프롤로그 캠페인 4장 세부기획서 <small>19쪽</small></a><a href="../files/aftermath/campaign-ch5.pdf">프롤로그 캠페인 5장 세부기획서 <small>18쪽</small></a><a href="../files/aftermath/campaign-ch6.pdf">프롤로그 캠페인 6장 세부기획서 <small>17쪽</small></a></div><div class="dg"><b>국왕</b><a href="../files/aftermath/king-content-detail.pdf">국왕 콘텐츠 세부기획서 <small>17쪽</small></a><a href="../files/aftermath/king-automation-plan.pdf">국왕 자동화 기획서 <small>4쪽</small></a></div><div class="dg"><b>기사</b><a href="../files/aftermath/knight-plan.pdf">기사 추가 콘텐츠 기획서 <small>7쪽</small></a><a href="../files/aftermath/knight-detail.pdf">기사 콘텐츠 세부기획서 <small>11쪽</small></a></div><div class="dg"><b>귀족</b><a href="../files/aftermath/noble-plan.pdf">귀족 추가 콘텐츠 기획서 <small>13쪽</small></a><a href="../files/aftermath/noble-detail.pdf">귀족 콘텐츠 세부기획서 <small>19쪽</small></a></div><div class="dg"><b>유닛</b><a href="../files/aftermath/unit-detail.pdf">아군 NPC와 몬스터 유닛 세부기획서 <small>18쪽</small></a></div><div class="dg"><b>장비</b><a href="../files/aftermath/equipment-plan.pdf">장비 시스템 기획서 <small>7쪽</small></a><a href="../files/aftermath/equipment-datatable.pdf">장비 데이터테이블 v1 <small>6쪽</small></a><a href="../files/aftermath/equipment-impl-request.pdf">장비 구현 요청서 <small>7쪽</small></a><a href="../files/aftermath/equipment-art-request.pdf">장비 아트 요청서 <small>9쪽</small></a></div><div class="dg"><b>스킬</b><a href="../files/aftermath/skilltree-revision.pdf">스킬트리 보완 기획서 <small>12쪽</small></a><a href="../files/aftermath/skilltree-revision-impl.pdf">스킬트리 보완 구현 요청서 <small>11쪽</small></a></div><div class="dg"><b>튜토리얼</b><a href="../files/aftermath/tutorial-plan.pdf">튜토리얼 기획서 <small>18쪽</small></a><a href="../files/aftermath/tutorial-wireframe.pdf">튜토리얼 와이어프레임 <small>20쪽</small></a></div><div class="dg"><b>제안과 변경 요청</b><a href="../files/aftermath/conscription-proposal.pdf">징집 권한 이전 제안서 <small>6쪽</small></a><a href="../files/aftermath/embassy-removal-proposal.pdf">대사관 건물 삭제 제안 <small>6쪽</small></a></div></div>
+</div></section>
+<section class="next"><div class="wrap"><div class="grid">
+<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
+<a class="box" href="echo.html"><small>NEXT PROJECT</small><b>잔향 (Echo)</b><span>"10초 전의 내가 지금의 동료가 된다". 계획이 맞아떨어지는 순간을 위해, 수치로 정…</span></a>
+</div></div></section><footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="https://sei-ban.github.io/memory-ender/?v=1124" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
+<script src="../assets/site.js?v=4"></script></body></html>

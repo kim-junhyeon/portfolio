@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>잔향 | 김준현</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
+<link rel="stylesheet" href="../assets/style.css?v=5"></head><body>
+<nav class="top"><div class="wrap"><a class="brand" href="../index.html">김준현<span>게임 기획 포트폴리오</span></a><ul><li><a href="../index.html" class="on">기획 프로젝트</a></li><li><a href="../analysis.html" class="">게임 분석</a></li><li><a href="../about.html" class="">소개</a></li></ul></div></nav>
+
+<header class="phead"><div class="wrap"><div class="k">PROJECT 03 | 개인 프로젝트, Unity 6</div><h1>잔향 (Echo)</h1><p>"10초 전의 내가 지금의 동료가 된다", 시간 루프 퍼즐 플랫포머 (2026.09.11 ~ 09.18)</p></div></header><section class="next top"><div class="wrap"><div class="grid">
+<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
+<a class="box" href="whoami.html"><small>NEXT PROJECT</small><b>WHO AM I?</b><span>호감에서 의심, 혼란 순으로 여섯 방을 배치하고, 정체가 드러나는 방을 마지막에 둔 추…</span></a>
+</div></div></section>
+<section class="s" style="padding-top:28px"><div class="wrap">
+<div class="video" data-v="echo"><div class="ph" style="background:#3A4F7A"><div><b style="font-size:20px;color:#fff">잔향 플레이 영상</b><br>영상 준비 중</div></div></div>
+<div class="stats"><div class="stat"><b>30</b><span>방 (스테이지 10 × 3)</span></div><div class="stat"><b>10+</b><span>기믹 종류</span></div><div class="stat"><b>5단계</b><span>방법별 도달 높이로 나눈 정답 루트</span></div><div class="stat"><b>1주</b><span>개발 기간</span></div></div>
+<div class="gallery"><img src="../assets/img/echo-lobby.jpg" alt="스테이지 선택"><img src="../assets/img/echo-plate.jpg" alt="발판과 문"><img src="../assets/img/echo-tower.jpg" alt="2단 탑"><img src="../assets/img/echo-rewind.jpg" alt="되감기"><img src="../assets/img/echo-key.jpg" alt="열쇠와 장벽"><img src="../assets/img/echo-timeout.jpg" alt="시간 종료"></div>
+<p class="cap">스테이지 선택, 발판과 문, 2단 탑, 되감기 연출, 스테이지 10 열쇠와 장벽, 시간 종료 선택. Windows 빌드 v1.0 화면.</p>
+<h3>개요</h3>
+<p>10초 동안의 움직임이 녹화되고, 되감으면 그 기록이 '잔향'이 되어 그대로 다시 움직인다. 과거의 내가 발판을 밟아 문을 열고, 닿지 않는 절벽은 과거의 나를 딛고 오른다. 목표 감정은 "내 계획이 맞아떨어지는 순간의 쾌감". 그 순간이 우연히 오지 않도록, 방마다 정해 둔 방법이 아니면 오를 수 없게 수치로 막았다.</p>
+<h3>담당 업무</h3>
+<ul class="l"><li>컨셉 기획서, WBS 작성, 규칙 설계와 30개 방 레벨 디자인, 이동 방법별 수치 밸런싱</li>
+<li>구현 (Claude 협업): 루프와 녹화 시스템, 기믹 10여 종, 로비, HUD, 되감기 연출, 에디터 스크립트로 30개 방 자동 생성</li></ul>
+<h3>레벨 설계: 방법별 도달 높이</h3>
+<table><tr><th>열쇠 든 점프</th><th>맨몸 점프</th><th>잔향 딛기</th><th>2단 탑</th><th>잔향 점프대</th></tr><tr><td>2.0</td><td>3.3</td><td>4.5</td><td>5.7</td><td>7.9</td></tr></table>
+<p>절벽 높이를 두 값 사이로 정해 "이 방법이 아니면 오를 수 없는" 방을 만들었다. 방 1에서 새 요소를 소개하고 방 3에서 앞 요소를 조합한다.</p>
+<h3>문제, 판단, 해결</h3>
+<table><tr><th style="width:30%">문제</th><th style="width:30%">판단</th><th>해결</th></tr>
+<tr><td>잔향 위에 서면 함께 떠오르는 버그</td><td>막기보다 퍼즐 재미로 쓸 수 있다</td><td>'잔향 점프대'를 정식 기믹으로 채택, 스테이지 4~5의 중심 규칙으로</td></tr>
+<tr><td>후반 스테이지가 같은 풀이의 변주뿐</td><td>새로 배우는 규칙이 필요하다</td><td>'들면 점프가 낮아지는 열쇠'로 과거의 나에게 심부름 맡기는 퍼즐</td></tr>
+<tr><td>마지막 방에서 의도보다 쉬운 풀이</td><td>감이 아닌 수치로 막아야 한다</td><td>점프 속도, 중력으로 이동 거리를 계산해 열쇠, 천장, 절벽 높이 조정</td></tr></table>
+<h3>문서</h3>
+<div class="docs"><a class="btn o" href="../files/echo-concept.pdf">컨셉 기획서 PDF</a><a class="btn o" href="../files/echo-wbs.pdf">WBS PDF</a></div>
+<div class="lesson"><b>배운 점</b>기획서는 만드는 사람이 그대로 구현할 만큼 구체적이어야 하고, 의도는 수치와 조건으로 고정해야 지켜진다.</div>
+</div></section>
+<section class="next"><div class="wrap"><div class="grid">
+<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
+<a class="box" href="whoami.html"><small>NEXT PROJECT</small><b>WHO AM I?</b><span>호감에서 의심, 혼란 순으로 여섯 방을 배치하고, 정체가 드러나는 방을 마지막에 둔 추…</span></a>
+</div></div></section><footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="https://sei-ban.github.io/memory-ender/?v=1124" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
+<script src="../assets/site.js?v=4"></script></body></html>
