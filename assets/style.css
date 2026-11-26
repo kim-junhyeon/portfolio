@@ -35,7 +35,7 @@ nav.top ul a{color:#dfe6f3;font-size:14px}nav.top ul a.on{color:#fff;font-weight
 section.s{padding:56px 0}
 section.alt{background:var(--bg)}
 h2.t{font-size:26px;color:var(--navy);margin-bottom:6px}
-p.st{color:var(--muted);margin-bottom:24px}
+p.st{color:var(--navy);font-weight:700;margin-bottom:24px}
 h3{font-size:19px;color:var(--navy);margin:34px 0 10px;padding-left:10px;border-left:4px solid var(--navy2)}
 p{margin-bottom:10px}
 
