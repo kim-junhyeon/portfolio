@@ -31,7 +31,7 @@ def head(title, depth, active):
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=11"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=12"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
@@ -57,7 +57,7 @@ def next_block(slug, depth=1):
     nx = CYCLE[(i + 1) % len(CYCLE)]
     hook = nx[3] if len(nx[3]) <= 48 else nx[3][:48] + '…'
     return f'''<section class="next"><div class="wrap"><div class="grid">
-<a class="box dark" href="{p}about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
+<a class="box dark" href="{p}about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식</span></a>
 <a class="box" href="{p}{nx[1]}"><small>{nx[4]}</small><b>{nx[2]}</b><span>{hook}</span></a>
 </div></div></section>'''
 
@@ -73,7 +73,7 @@ def write(path, html):
 # ---------------- 홈 ----------------
 home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <header class="hero"><div class="wrap">
-<div class="k">CONTENT &amp; SYSTEM DESIGNER | 신입</div>
+<div class="k">GAME DESIGNER | 신입</div>
 <h1>오래 남는 순간은 우연이 아니라 설계입니다.</h1>
 <p class="lead">오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 콘텐츠, 시스템 기획자 김준현입니다.</p>
 <div class="video" data-v="memory-ender"><div class="ph"><img src="assets/img/me-chase.jpg" alt=""><div><b style="font-size:20px;color:#fff">메모리 엔더 플레이 영상</b><br>영상 준비 중. 아래 버튼으로 바로 플레이할 수 있습니다</div></div></div>
