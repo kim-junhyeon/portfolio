@@ -27,7 +27,7 @@ def acard(a, p):
 
 def head(title, depth, active):
     p = '../' * depth
-    nav = [('index.html', '기획 프로젝트', 'home'), ('analysis.html', '게임 분석', 'analysis'), ('about.html', '소개', 'about')]
+    nav = [('index.html', '기획 프로젝트', 'home'), ('analysis.html', '게임 분석 및 제안', 'analysis'), ('about.html', '소개', 'about')]
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
@@ -49,7 +49,7 @@ def card(pr, p):
     return f'''<a class="card" href="{p}projects/{pr["slug"]}.html"><div class="thumb">{th}</div><div class="c"><div class="tag">{pr["tag"]}</div><h4>{pr["name"]}</h4><p>{pr["hook"]}</p><div class="more">자세히 보기</div></div></a>'''
 
 CYCLE = [(x['slug'], 'projects/' + x['slug'] + '.html', x['name'], x['hook'], 'NEXT PROJECT') for x in PROJECTS] + \
-        [('analysis', 'analysis.html', '게임 분석', '상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 본 분석', 'NEXT')]
+        [('analysis', 'analysis.html', '게임 분석 및 제안', '상용 게임이 감정을 쌓고 터뜨리는 구조를 분석하고 개선안을 제안', 'NEXT')]
 
 def next_block(slug, depth=1):
     p = '../' * depth
@@ -84,12 +84,12 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div>
 </div></section>
 <section class="s alt"><div class="wrap">
-<h2 class="t">게임 분석</h2><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 그 구조 위에 새 콘텐츠를 제안합니다.</p>
+<h2 class="t">게임 분석 및 제안</h2><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 그 구조 위에 새 콘텐츠를 제안합니다.</p>
 <div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div>
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">
 <a class="box dark" href="about.html"><small>ABOUT</small><b>이 프로젝트들을 만든 사람</b><span>연출 전공에서 게임 기획으로 온 이야기와 일하는 방식</span></a>
-<a class="box" href="analysis.html"><small>GAME ANALYSIS</small><b>게임 분석</b><span>상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지</span></a>
+<a class="box" href="analysis.html"><small>GAME ANALYSIS &amp; PROPOSAL</small><b>게임 분석 및 제안</b><span>상용 게임의 감정 구조를 분석하고 개선안을 제안</span></a>
 </div></div></section>
 ''' + foot(0)
 write('index.html', home)
@@ -319,8 +319,8 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 write('about.html', ab)
 
 # ---------------- 게임 분석 ----------------
-an = head('게임 분석 | 김준현', 0, 'analysis') + '''
-<header class="phead"><div class="wrap"><div class="k">GAME ANALYSIS</div><h1>게임 분석</h1><p>잘 만든 상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 봅니다. 분석에서 찾은 구조를 바탕으로, 그 게임에 더할 새 콘텐츠도 함께 제안합니다.</p></div></header>
+an = head('게임 분석 및 제안 | 김준현', 0, 'analysis') + '''
+<header class="phead"><div class="wrap"><div class="k">GAME ANALYSIS &amp; PROPOSAL</div><h1>게임 분석 및 제안</h1><p>잘 만든 상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 봅니다. 분석에서 찾은 구조를 바탕으로, 그 게임에 더할 새 콘텐츠도 함께 제안합니다.</p></div></header>
 <section class="s"><div class="wrap">
 <div class="cards">
 <div class="card"><div class="thumb"><div class="txt" style="background:#2F5496">트릭컬 리바이브</div></div><div class="c"><div class="tag">ANALYSIS 01 | 수집형 RPG</div><h4>트릭컬 리바이브</h4><p>분석 문서 준비 중입니다.</p></div></div>
