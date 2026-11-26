@@ -326,7 +326,7 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 </div></section>
 
 <section class="s alt"><div class="wrap">
-<h2 class="t">프로젝트 다시 보기</h2><p class="st">궁금한 프로젝트를 골라 기획 의도와 설계 과정을 확인해 보세요.</p>
+<h2 class="t">작업 다시 보기</h2><p class="st">궁금한 작업을 골라 확인해 보세요.</p>
 <div class="sl-tabs" role="tablist"><button class="sl-tab on" data-i="0" role="tab">기획 프로젝트</button><button class="sl-tab" data-i="1" role="tab">게임 분석 및 제안</button></div>
 <div class="slider">
 <button class="sl-arrow sl-prev" aria-label="이전 칸" data-d="-1"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
