@@ -41,12 +41,17 @@ def card(pr, p):
         th = f'<div class="txt" style="background:{pr["color"]};{nudge}">{pr["name"]}</div>'
     return f'''<a class="card" href="{p}projects/{pr["slug"]}.html"><div class="thumb">{th}</div><div class="c"><div class="tag">{pr["tag"]}</div><h4>{pr["name"]}</h4><p>{pr["hook"]}</p><div class="more">자세히 보기</div></div></a>'''
 
-def next_block(slug):
-    i = [x['slug'] for x in PROJECTS].index(slug)
-    nx = PROJECTS[(i + 1) % len(PROJECTS)]
+CYCLE = [(x['slug'], 'projects/' + x['slug'] + '.html', x['name'], x['hook'], 'NEXT PROJECT') for x in PROJECTS] + \
+        [('analysis', 'analysis.html', '게임 분석', '상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 본 분석', 'NEXT')]
+
+def next_block(slug, depth=1):
+    p = '../' * depth
+    i = [x[0] for x in CYCLE].index(slug)
+    nx = CYCLE[(i + 1) % len(CYCLE)]
+    hook = nx[3] if len(nx[3]) <= 48 else nx[3][:48] + '…'
     return f'''<section class="next"><div class="wrap"><div class="grid">
-<a class="box dark" href="../about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
-<a class="box" href="{nx["slug"]}.html"><small>NEXT PROJECT</small><b>{nx["name"]}</b><span>{nx["hook"][:48]}…</span></a>
+<a class="box dark" href="{p}about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>한 장면의 감정을 연구하던 연출 전공이 게임 기획으로 온 이야기와 일하는 방식</span></a>
+<a class="box" href="{p}{nx[1]}"><small>{nx[4]}</small><b>{nx[2]}</b><span>{hook}</span></a>
 </div></div></section>'''
 
 def write(path, html):
@@ -310,6 +315,6 @@ an = head('게임 분석 | 김준현', 0, 'analysis') + '''
 <div class="card"><div class="thumb"><div class="txt" style="background:#2F5496">트릭컬 리바이브</div></div><div class="c"><div class="tag">ANALYSIS 01 | 수집형 RPG</div><h4>트릭컬 리바이브</h4><p>분석 문서 준비 중입니다.</p></div></div>
 </div>
 </div></section>
-''' + foot(0)
+''' + next_block('analysis', 0) + foot(0)
 write('analysis.html', an)
 print('ok')
