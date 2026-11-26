@@ -31,14 +31,14 @@ def head(title, depth, active):
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=6"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=7"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
 def foot(depth):
     p = '../' * depth
     return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
-<script src="{p}assets/site.js?v=5"></script></body></html>'''
+<script src="{p}assets/site.js?v=6"></script></body></html>'''
 
 def card(pr, p):
     if pr['thumb']:
@@ -82,14 +82,14 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <section class="s slider-sec"><div class="wrap">
 <div class="sl-tabs" role="tablist"><button class="sl-tab on" data-i="0" role="tab">기획 프로젝트</button><button class="sl-tab" data-i="1" role="tab">게임 분석 및 제안</button></div>
 <div class="slider">
-<button class="sl-arrow prev" aria-label="이전 칸" data-d="-1"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="sl-arrow sl-prev" aria-label="이전 칸" data-d="-1"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
 <div class="sl-view"><div class="sl-track">
 <div class="sl-panel"><p class="st">네 프로젝트 모두 마지막 한순간을 먼저 정하고 거기까지의 흐름을 설계했습니다. 카드를 누르면 기획 의도와 설계, 플레이하며 고친 기록을 볼 수 있습니다.</p>
 <div class="cards">{''.join(card(pr, '') for pr in PROJECTS)}</div></div>
 <div class="sl-panel"><p class="st">상용 게임이 감정을 어디서 쌓고 어디서 터뜨리는지 뜯어 보고, 그 구조 위에 개선안과 새 콘텐츠를 제안합니다.</p>
 <div class="cards">{''.join(acard(a, '') for a in ANALYSES)}</div></div>
 </div></div>
-<button class="sl-arrow next" aria-label="다음 칸" data-d="1"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+<button class="sl-arrow sl-next" aria-label="다음 칸" data-d="1"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
 </div>
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">

@@ -42,7 +42,7 @@ document.querySelectorAll('a[href$=".pdf"]').forEach(a => { a.target = '_blank';
   if (!sl) return;
   const view = sl.querySelector('.sl-view'), track = sl.querySelector('.sl-track');
   const panels = [...sl.querySelectorAll('.sl-panel')], tabs = [...document.querySelectorAll('.sl-tab')];
-  const prev = sl.querySelector('.sl-arrow.prev'), next = sl.querySelector('.sl-arrow.next');
+  const prev = sl.querySelector('.sl-arrow.sl-prev'), next = sl.querySelector('.sl-arrow.sl-next');
   let i = 0;
   const go = k => {
     i = Math.max(0, Math.min(panels.length - 1, k));
