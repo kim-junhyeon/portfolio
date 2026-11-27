@@ -27,11 +27,11 @@ def acard(a, p):
 
 def head(title, depth, active):
     p = '../' * depth
-    nav = [('index.html#projects', '기획 프로젝트', 'home'), ('index.html#analysis', '게임 분석 및 제안', 'analysis'), ('about.html', '소개', 'about')]
-    items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}">{t}</a></li>' for h, t, k in nav)
+    nav = [('index.html#projects', '기획 프로젝트', 'home'), ('index.html#analysis', '게임 분석 및 제안', 'analysis'), ('files/portfolio.pdf?v=1127b', 'PDF', 'pdf'), ('about.html', '소개', 'about')]
+    items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}"' + (' target="_blank" rel="noopener"' if k == 'pdf' else '') + f'>{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=13"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=14"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
@@ -94,7 +94,7 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 </div></section>
 <section class="next"><div class="wrap"><div class="grid">
 <a class="box dark" href="about.html"><small>ABOUT</small><b>이 프로젝트들을 만든 사람</b><span>연출 전공에서 게임 기획으로 온 이야기와 일하는 방식</span></a>
-<a class="box" href="analysis.html"><small>GAME ANALYSIS &amp; PROPOSAL</small><b>게임 분석 및 제안</b><span>상용 게임의 시스템과 콘텐츠를 분석하고 개선안을 제안</span></a>
+<a class="box" href="files/portfolio.pdf?v=1127b" target="_blank" rel="noopener"><small>PDF</small><b>포트폴리오 PDF로 보기</b><span>프로젝트 4개 요약, 8쪽</span></a>
 </div></div></section>
 ''' + foot(0)
 write('index.html', home)
