@@ -37,7 +37,7 @@ def head(title, depth, active):
 
 def foot(depth):
     p = '../' * depth
-    return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
+    return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{p}files/portfolio.pdf?v=1127">포트폴리오 PDF</a>, <a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
 <script src="{p}assets/site.js?v=8"></script></body></html>'''
 
 def card(pr, p):
@@ -295,7 +295,7 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 <p style="font-size:18px;color:var(--navy);font-weight:700">'플레이어가 이 순간 무엇을 느껴야 하는가'부터 정하고, 그 감정이 생기도록 규칙과 레벨을 거꾸로 짭니다.</p>
 <p>방송연예학과에서 연극 연출을 하며, 한 장면의 감정을 위해 조명과 음향의 타이밍, 배우의 동선을 계속 연구했습니다. 그 경험을 플레이어가 직접 움직이는 게임에서 쓰고 싶어 게임 기획을 시작했습니다.</p>
 <div class="chips"><span class="chip">감정 곡선 기반 레벨 설계</span><span class="chip">수치로 해법을 강제하는 퍼즐</span><span class="chip">바로 구현되는 기획서</span><span class="chip">연출 전공의 장면 구성 감각</span><span class="chip">AI와 함께 끝까지 구현</span></div>
-<div class="btns"><a class="btn o" href="mailto:junhyeon.kim.work@gmail.com">junhyeon.kim.work@gmail.com</a></div>
+<div class="btns"><a class="btn n" href="files/portfolio.pdf?v=1127">포트폴리오 PDF</a><a class="btn o" href="mailto:junhyeon.kim.work@gmail.com">junhyeon.kim.work@gmail.com</a></div>
 </div></div>
 
 <h3>걸어온 길</h3>
