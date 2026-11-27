@@ -27,11 +27,11 @@ def acard(a, p):
 
 def head(title, depth, active):
     p = '../' * depth
-    nav = [('index.html#projects', '기획 프로젝트', 'home'), ('index.html#analysis', '게임 분석 및 제안', 'analysis'), ('files/portfolio.pdf?v=1127b', 'PDF', 'pdf'), ('about.html', '소개', 'about')]
-    items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}"' + (' target="_blank" rel="noopener"' if k == 'pdf' else '') + f'>{t}</a></li>' for h, t, k in nav)
+    nav = [('index.html#projects', '기획 프로젝트', 'home'), ('index.html#analysis', '게임 분석 및 제안', 'analysis'), ('about.html', '소개', 'about'), ('files/portfolio.pdf?v=1127b', 'PDF', 'pdf')]
+    items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ("navpdf" if k == 'pdf' else "")}" data-nav="{k}"' + (' target="_blank" rel="noopener"' if k == 'pdf' else '') + f'>{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=14"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=15"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 

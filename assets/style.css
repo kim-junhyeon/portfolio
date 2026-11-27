@@ -14,6 +14,7 @@ nav.top .brand{color:#fff;font-weight:700;letter-spacing:.02em}
 nav.top .brand span{color:#b9c8e6;font-weight:500;margin-left:8px;font-size:14px}
 nav.top ul{list-style:none;display:flex;gap:22px}
 nav.top ul a{color:#e6ecf7;font-size:15px;font-weight:500}nav.top ul a.on{color:#fff;font-weight:700}
+nav.top ul{align-items:center}nav.top ul a.navpdf{border:1px solid rgba(255,255,255,.55);border-radius:6px;padding:4px 12px;color:#fff;font-weight:600}nav.top ul a.navpdf:hover{background:#fff;color:#1B2A4A}
 
 /* 히어로 */
 .hero{background:var(--navy);color:#fff;padding:56px 0 64px}
@@ -110,7 +111,7 @@ footer a{color:#dfe6f3}
 @media(max-width:760px){
  .hero h1{font-size:27px}.cards,.next .grid,.gallery{grid-template-columns:1fr}
  .stats{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}
- nav.top ul{gap:11px}nav.top ul a{font-size:13.5px}nav.top .brand span{display:none}
+ nav.top ul{gap:9px}nav.top ul a{font-size:13px;white-space:nowrap}nav.top ul a.navpdf{padding:2px 7px}nav.top .brand span{display:none}
 }
 
 .slides{position:relative;width:100%;aspect-ratio:16/9;margin:12px 0;border:1px solid #d9dde5;border-radius:8px;overflow:hidden;background:#f3f4f7}
