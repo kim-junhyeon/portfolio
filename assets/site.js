@@ -69,7 +69,7 @@ document.querySelectorAll('a[href$=".pdf"]').forEach(a => { a.target = '_blank';
   tabs.forEach((t, n) => t.addEventListener('click', () => go(n, 1)));
   // 홈에서 상단 메뉴를 누르면 새로 열지 않고 슬라이드
   Object.entries(navs).forEach(([k, a]) => a && a.addEventListener('click', e => { e.preventDefault(); go(k === 'analysis' ? 1 : 0, 1); sl.closest('section').scrollIntoView({ behavior: 'smooth' }); }));
-  if (isHome) addEventListener('hashchange', () => go(location.hash === '#analysis' ? 1 : 0));
+  if (isHome) addEventListener('hashchange', () => { go(location.hash === '#analysis' ? 1 : 0); sl.closest('section').scrollIntoView({ behavior: 'smooth' }); });
   sl.tabIndex = -1;
   document.addEventListener('keydown', e => {
     if (document.querySelector('.lb.on')) return;
@@ -83,4 +83,7 @@ document.querySelectorAll('a[href$=".pdf"]').forEach(a => { a.target = '_blank';
   addEventListener('resize', () => go(i));
   addEventListener('load', () => go(i));
   if (isHome && location.hash === '#analysis') go(1); else go(0);
+  // 다른 페이지에서 메뉴로 들어오면 슬라이드 칸이 바로 보이게
+  const toSlider = () => { const top = sl.closest('section').getBoundingClientRect().top + scrollY - 56; scrollTo({ top, behavior: 'instant' }); };
+  if (isHome && /^#(analysis|projects)$/.test(location.hash)) { requestAnimationFrame(toSlider); addEventListener('load', () => setTimeout(toSlider, 0)); }
 })();

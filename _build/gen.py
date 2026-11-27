@@ -31,14 +31,14 @@ def head(title, depth, active):
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ("navpdf" if k == 'pdf' else "")}" data-nav="{k}"' + (' target="_blank" rel="noopener"' if k == 'pdf' else '') + f'>{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
-<link rel="stylesheet" href="{p}assets/style.css?v=15"></head><body>
+<link rel="stylesheet" href="{p}assets/style.css?v=16"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
 def foot(depth):
     p = '../' * depth
     return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{p}files/portfolio.pdf?v=1127c">포트폴리오 PDF</a>, <a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
-<script src="{p}assets/site.js?v=8"></script></body></html>'''
+<script src="{p}assets/site.js?v=9"></script></body></html>'''
 
 def card(pr, p):
     if pr['thumb']:
@@ -55,10 +55,13 @@ def next_block(slug, depth=1):
     p = '../' * depth
     i = [x[0] for x in CYCLE].index(slug)
     nx = CYCLE[(i + 1) % len(CYCLE)]
-    hook = nx[3] if len(nx[3]) <= 48 else nx[3][:48] + '…'
-    return f'''<section class="next"><div class="wrap"><div class="grid">
+    pv = CYCLE[(i - 1) % len(CYCLE)]
+    cut = lambda t: t if len(t) <= 48 else t[:48] + '…'
+    pl = 'PREV PROJECT' if pv[4] == 'NEXT PROJECT' else 'PREV'
+    return f'''<section class="next"><div class="wrap"><div class="grid g3">
+<a class="box" href="{p}{pv[1]}"><small>{pl}</small><b>{pv[2]}</b><span>{cut(pv[3])}</span></a>
 <a class="box dark" href="{p}about.html"><small>ABOUT</small><b>이 기획을 한 사람</b><span>연출에서 게임 기획으로, 일하는 방식과 AI 활용 범위</span></a>
-<a class="box" href="{p}{nx[1]}"><small>{nx[4]}</small><b>{nx[2]}</b><span>{hook}</span></a>
+<a class="box" href="{p}{nx[1]}"><small>{nx[4]}</small><b>{nx[2]}</b><span>{cut(nx[3])}</span></a>
 </div></div></section>'''
 
 def write(path, html):

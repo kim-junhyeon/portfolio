@@ -84,7 +84,7 @@ ul.l{padding-left:20px;margin-bottom:12px}ul.l li{margin-bottom:4px}
 
 /* 다음으로 */
 .next{background:var(--bg);padding:44px 0;border-top:1px solid var(--line)}
-.next .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.next .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.next .grid.g3{grid-template-columns:1fr 1fr 1fr}.next .grid.g3 .box:last-child{text-align:right}
 .next a.box{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;color:var(--text)}
 .next a.box:hover{text-decoration:none;box-shadow:0 8px 20px rgba(27,42,74,.1)}
 .next .box small{color:var(--navy2);font-weight:700;letter-spacing:.06em}
@@ -109,7 +109,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 footer a{color:#dfe6f3}
 
 @media(max-width:760px){
- .hero h1{font-size:27px}.cards,.next .grid,.gallery{grid-template-columns:1fr}
+ .hero h1{font-size:27px}.cards,.next .grid,.next .grid.g3,.gallery{grid-template-columns:1fr}.next .grid.g3 .box:last-child{text-align:left}
  .stats{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}
  nav.top ul{gap:9px}nav.top ul a{font-size:13px;white-space:nowrap}nav.top ul a.navpdf{padding:2px 7px}nav.top .brand span{display:none}
 }
