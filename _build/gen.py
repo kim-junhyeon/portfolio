@@ -30,7 +30,7 @@ def head(title, depth, active):
     nav = [('index.html#projects', '기획 프로젝트', 'home'), ('index.html#analysis', '게임 분석 및 제안', 'analysis'), ('about.html', '소개', 'about')]
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
+<title>{title}</title><meta name="description" content="게임 기획자 김준현 포트폴리오">
 <link rel="stylesheet" href="{p}assets/style.css?v=13"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
@@ -75,7 +75,7 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <header class="hero"><div class="wrap">
 <div class="k">GAME DESIGNER | 신입</div>
 <h1>오래 남는 순간은 우연이 아니라 설계입니다.</h1>
-<p class="lead">오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 콘텐츠, 시스템 기획자 김준현입니다.</p>
+<p class="lead">오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 게임 기획자 김준현입니다.</p>
 <div class="video" data-v="memory-ender"><div class="ph"><img src="assets/img/me-chase.jpg" alt=""><div><b style="font-size:20px;color:#fff">메모리 엔더 플레이 영상</b><br>영상 준비 중. 아래 버튼으로 바로 플레이할 수 있습니다</div></div></div>
 <div class="btns"><a class="btn p" href="{GAME}" target="_blank" rel="noopener">메모리 엔더 바로 플레이 (약 5분)</a><a class="btn g" href="projects/memory-ender.html">기획 의도 보기</a></div>
 </div></header>
