@@ -3,7 +3,7 @@ A = '/home/claude/portfolio/assets/img/'
 I = '/home/claude/pdfwork/img/'
 SITE = 'kim-junhyeon.github.io/portfolio'
 EMAIL = 'junhyeon.kim.work@gmail.com'
-ID = '오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 게임 기획자'
+ID = '오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 콘텐츠, 시스템 기획자'
 
 css = '''
 @page{size:A4;margin:0}

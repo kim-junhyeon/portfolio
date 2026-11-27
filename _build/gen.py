@@ -30,14 +30,14 @@ def head(title, depth, active):
     nav = [('index.html#projects', '기획 프로젝트', 'home'), ('index.html#analysis', '게임 분석 및 제안', 'analysis'), ('about.html', '소개', 'about')]
     items = ''.join(f'<li><a href="{p}{h}" class="{"on" if k == active else ""}" data-nav="{k}">{t}</a></li>' for h, t, k in nav)
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><meta name="description" content="게임 기획자 김준현 포트폴리오">
+<title>{title}</title><meta name="description" content="콘텐츠, 시스템 기획자 김준현 포트폴리오">
 <link rel="stylesheet" href="{p}assets/style.css?v=13"></head><body>
 <nav class="top"><div class="wrap"><a class="brand" href="{p}index.html">김준현<span>게임 기획 포트폴리오</span></a><ul>{items}</ul></div></nav>
 '''
 
 def foot(depth):
     p = '../' * depth
-    return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{p}files/portfolio.pdf?v=1127">포트폴리오 PDF</a>, <a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
+    return f'''<footer><div class="wrap"><span>김준현, junhyeon.kim.work@gmail.com</span><span><a href="{p}files/portfolio.pdf?v=1127b">포트폴리오 PDF</a>, <a href="{GAME}" target="_blank" rel="noopener">메모리 엔더 플레이</a></span></div></footer>
 <script src="{p}assets/site.js?v=8"></script></body></html>'''
 
 def card(pr, p):
@@ -75,7 +75,7 @@ home = head('김준현 | 게임 기획 포트폴리오', 0, 'home') + f'''
 <header class="hero"><div class="wrap">
 <div class="k">GAME DESIGNER | 신입</div>
 <h1>오래 남는 순간은 우연이 아니라 설계입니다.</h1>
-<p class="lead">오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 게임 기획자 김준현입니다.</p>
+<p class="lead">오래 기억될 한순간, 그 순간까지의 감정과 규칙, 수치를 설계하는 콘텐츠, 시스템 기획자 김준현입니다.</p>
 <div class="video" data-v="memory-ender"><div class="ph"><img src="assets/img/me-chase.jpg" alt=""><div><b style="font-size:20px;color:#fff">메모리 엔더 플레이 영상</b><br>영상 준비 중. 아래 버튼으로 바로 플레이할 수 있습니다</div></div></div>
 <div class="btns"><a class="btn p" href="{GAME}" target="_blank" rel="noopener">메모리 엔더 바로 플레이 (약 5분)</a><a class="btn g" href="projects/memory-ender.html">기획 의도 보기</a></div>
 </div></header>
@@ -295,7 +295,7 @@ ab = head('소개 | 김준현', 0, 'about') + f'''
 <p style="font-size:18px;color:var(--navy);font-weight:700">'플레이어가 이 순간 무엇을 느껴야 하는가'부터 정하고, 그 감정이 생기도록 규칙과 레벨을 거꾸로 짭니다.</p>
 <p>방송연예학과에서 연극 연출을 하며, 한 장면의 감정을 위해 조명과 음향의 타이밍, 배우의 동선을 계속 연구했습니다. 그 경험을 플레이어가 직접 움직이는 게임에서 쓰고 싶어 게임 기획을 시작했습니다.</p>
 <div class="chips"><span class="chip">감정 곡선 기반 레벨 설계</span><span class="chip">수치로 해법을 강제하는 퍼즐</span><span class="chip">바로 구현되는 기획서</span><span class="chip">연출 전공의 장면 구성 감각</span><span class="chip">AI와 함께 끝까지 구현</span></div>
-<div class="btns"><a class="btn n" href="files/portfolio.pdf?v=1127">포트폴리오 PDF</a><a class="btn o" href="mailto:junhyeon.kim.work@gmail.com">junhyeon.kim.work@gmail.com</a></div>
+<div class="btns"><a class="btn n" href="files/portfolio.pdf?v=1127b">포트폴리오 PDF</a><a class="btn o" href="mailto:junhyeon.kim.work@gmail.com">junhyeon.kim.work@gmail.com</a></div>
 </div></div>
 
 <h3>걸어온 길</h3>
