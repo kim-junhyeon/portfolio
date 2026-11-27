@@ -298,7 +298,7 @@ with sync_playwright() as p:
     pg = b.new_page(); pg.goto('file:///home/claude/pdfwork/portfolio_generic.html'); pg.wait_for_timeout(800)
     over = pg.evaluate('''()=>[...document.querySelectorAll('.page')].map((s,i)=>{const b=s.querySelector('.body');if(!b)return i+1+':-';const l=[...b.children].pop().getBoundingClientRect().bottom-s.getBoundingClientRect().top;return (i+1)+':'+Math.round(l)+'/'+Math.round(s.getBoundingClientRect().height-38)})''')
     print(' '.join(over))
-    pg.pdf(path='/home/claude/pdfwork/portfolio.pdf', format='A4', print_background=True, margin={'top':'0','bottom':'0','left':'0','right':'0'})
+    pg.pdf(path='/home/claude/pdfwork/portfolio.pdf', prefer_css_page_size=True, print_background=True)
     b.close()
 print('ok')
 import sys
@@ -309,6 +309,6 @@ if len(sys.argv)>1:
     with sync_playwright() as p:
         b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox','--allow-file-access-from-files'])
         pg=b.new_page();pg.goto('file:///home/claude/pdfwork/marked.html');pg.wait_for_timeout(800)
-        pg.pdf(path='/home/claude/pdfwork/marked.pdf',format='A4',print_background=True,margin={'top':'0','bottom':'0','left':'0','right':'0'})
+        pg.pdf(path='/home/claude/pdfwork/marked.pdf',prefer_css_page_size=True,print_background=True)
         b.close()
     print('marked')
